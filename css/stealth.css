@@ -1,0 +1,63 @@
+/* Globals */
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  color: #000A38;
+  background-image: url('../images/pattern.png');
+}
+
+/* Headers */
+h1, h2, h3{color: #000A38;}
+p.lead{opacity: .40; font-size:16px;}
+
+
+
+/* btns */
+.btn{border-radius: 0; padding: 1rem 4rem;}
+.btn.btn-primary{background-color: #FF0081; border-color: #FF0081}
+
+
+
+/*
+ * Custom translucent site header
+ */
+
+.site-header {}
+.site-header .logo img{width: 146px;}
+.site-header a {}
+.site-header a:hover {}
+
+.items{margin-bottom: 8rem;}
+.items .item{
+  background: #FFFFFF;
+  box-shadow: 0 12px 44px 0 rgba(0,10,56,0.12);
+}
+.items .item span.iconic{
+  /* color: #FF0081; */
+}
+
+/* Footer */
+
+footer{
+  background: #000A38;
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: center;
+}
+footer img{width:47px;}
+
+.flex-equal > * {
+  -ms-flex: 1;
+  -webkit-box-flex: 1;
+  flex: 1;
+}
+@media (min-width: 768px) {
+  .flex-md-equal > * {
+    -ms-flex: 1;
+    -webkit-box-flex: 1;
+    flex: 1;
+  }
+}
+
+.overflow-hidden { overflow: hidden; }
