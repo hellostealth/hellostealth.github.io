@@ -32,9 +32,7 @@ p.lead{opacity: .40; font-size:16px;}
   background: #FFFFFF;
   box-shadow: 0 12px 44px 0 rgba(0,10,56,0.12);
 }
-.items .item span.iconic{
-  /* color: #FF0081; */
-}
+.items .item h4{color: #000A38;}
 
 /* Footer */
 
