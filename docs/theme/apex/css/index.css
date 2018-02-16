@@ -7,7 +7,7 @@
   --tracking-medium: 0.5rem;
   --tracking-large: 0.8rem;
 
-  --dark: #000;
+  --dark: #FF0081;
   --blue: #33A9FF;
   --light-gray: #fafafa;
 
@@ -24,14 +24,12 @@
 }
 
 html, body {
-  font-family: -apple-system, BlinkMacSystemFont,
-    "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  color: #000A38;
+  background-image: url('../../../../images/pattern.png');
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
   font-weight: 300;
-  background: var(--bg);
   color: var(--fg-dark);
   line-height: 1;
   margin: 0;
@@ -49,7 +47,7 @@ h1, h2, h3, h4 {
   font-size: 1.2rem;
   font-weight: 600;
   line-height: 1.5rem;
-  color: var(--fg-dark);
+  color: var(--dark);
 }
 
 h1 {
@@ -119,7 +117,7 @@ ul li strong {
 
 pre {
   background: var(--light-gray);
-  color: var(--dark);
+  color: var(--fg-dark);
   padding: 30px;
   border-radius: 2px;
   overflow: auto;
@@ -243,6 +241,10 @@ details > p {
 .Title {
   margin: 5px 0;
   line-height: 2.2em;
+}
+
+.Title img{
+  width: 301px;
 }
 
 .Title.center {
