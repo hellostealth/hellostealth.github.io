@@ -27,6 +27,8 @@ html, body {
   font-family: 'Open Sans', sans-serif;
   color: #000A38;
   background-image: url('../../../../images/pattern.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
   font-weight: 300;
