@@ -11,12 +11,23 @@ h1, h2, h3{color: #000A38;}
 p.lead{opacity: .40; font-size:16px;}
 
 
-
 /* btns */
 .btn{border-radius: 0; padding: 1rem 4rem;}
 .btn.btn-primary{background-color: #FF0081; border-color: #FF0081}
 
 
+/* Links */
+a.block{
+  color: inherit;
+  text-decoration: inherit;
+  transition: all .2s ease-in-out;
+}
+a:hover{
+  color: inherit;
+  text-decoration: inherit;
+  transform: scale(1.05);
+}
+a:active{color: inherit;text-decoration: inherit;}
 
 /*
  * Custom translucent site header
@@ -29,6 +40,7 @@ p.lead{opacity: .40; font-size:16px;}
 
 .items{margin-bottom: 8rem;}
 .items .item{
+  min-height:460px;
   background: #FFFFFF;
   box-shadow: 0 12px 44px 0 rgba(0,10,56,0.12);
 }
@@ -36,6 +48,11 @@ p.lead{opacity: .40; font-size:16px;}
   width:200px;
 }
 .items .item h4{color: #000A38;}
+
+/* Nav */
+nav.site-header{
+  background: rgba(255, 255, 255, 0.9);
+}
 
 /* Footer */
 
