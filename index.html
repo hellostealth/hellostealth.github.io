@@ -31,13 +31,10 @@
     <meta name="msapplication-TileImage" content="https://hellostealth.github.io/images/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <title>Stealth - An framework for creating awesome bots.</title>
+    <title>Stealth - Ruby framework for creating awesome bots.</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/stealth.css" rel="stylesheet">
@@ -48,43 +45,60 @@
 
     <nav class="site-header sticky-top py-1">
       <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2 logo" href="#">
+        <a class="py-2 logo" href="/">
           <img src="images/logo.svg" alt="Stealth Framework">
         </a>
+
+        <ul>
+          <li><a href="/overview">Overview</a></li>
+          <li><a href="/docs">Docs</a></li>
+          <li><a href="/docs">GitHub</a></li>
+        </ul>
       </div>
     </nav>
 
     <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
       <div class="col-md-10 p-lg-5 mx-auto my-5">
         <h1 class="display-4 font-weight-normal mb-4">Powerful, useable bots. <br />Hello Stealth...</h1>
-        <p class="lead font-weight-normal mb-4">Powerful Facebook, SMS, Slack and Alexa bots are now easier than ever to create.</p>
-        <a class="btn btn-primary" href="https://github.com/hellostealth/stealth"><span class="iconic iconic-social-github" title="star" aria-hidden="true"></span> Github</a>
+        <p class="lead font-weight-normal mb-4">Stealth is a Ruby framework for creating conversational (voice & chat) bots.</p>
+        <a class="btn btn-primary" href="https://github.com/hellostealth/stealth"><span class="iconic iconic-social-github" title="star" aria-hidden="true"></span> GitHub</a>
       </div>
     </div>
 
     <div class="container">
-      <div class="p-5 items">
+      <div class="row">
+        <p class='text-left'>
+          Stealth was designed to bring all the good things about web development to the world of building bots. It sports an MVC architecture and it's convention of configuration philosophy is inspired by Ruby on Rails.
+        </p>
+      </div>
 
+      <div class="row">
+        <p class='text-left'>
+          We can't wait to see the bots you make with Stealth.
+        </p>
+      </div>
+
+      <div class="mt-4 p-5 items">
         <div class="row">
           <a href="docs/index.html#getting_started" class="block col-sm-12 col-md-6 col-lg-4 mb-5">
             <div class="px-3 py-5 text-center item">
-              <img src="images/getting-started.svg" alt="Getting Started with Stealth" class="mb-2">
-              <h4>Getting Started</h4>
-              <p class="lead">Getting started with Stealth is easy. Checkout our guide and be up in running fast.</p>
+              <img src="images/getting-started.svg" alt="Getting Started with Stealth" class="mb-4">
+              <h4 class='mb-3'>Overview</h4>
+              <p class="lead text-left">Getting started with Stealth is easy. Our brief overview will run you through the basics.</p>
             </div>
           </a>
           <a href="docs/index.html" class="block col-sm-12 col-md-6 col-lg-4 mb-5">
             <div class="px-3 py-5 text-center item">
-              <img src="images/docs.svg" alt="Getting Started with Stealth" class="mb-2">
-              <h4>Docs</h4>
-              <p class="lead">Want to learn what's under the hood? Add advanced functionlity? No problem. Check out our full docs here.</p>
+              <img src="images/docs.svg" alt="Getting Started with Stealth" class="mb-4">
+              <h4 class='mb-3'>Docs</h4>
+              <p class="lead text-left">Ready to build a bot of your own? Our documentation will guide you through the process.</p>
             </div>
           </a>
           <a href="docs/index.html#drivers" class="block col-sm-12 col-md-6 col-lg-4 mb-5">
             <div class="px-3 py-5 text-center item">
-              <img src="images/drivers.svg" alt="Getting Started with Stealth" class="mb-2">
-              <h4>Integrations</h4>
-              <p class="lead">Stealth is extensible. All service and messaging integrations are split out into separate Ruby Gems.</p>
+              <img src="images/drivers.svg" alt="Getting Started with Stealth" class="mb-4">
+              <h4 class='mb-3'>Integrations</h4>
+              <p class="lead text-left">Stealth is extensible. All service and messaging integrations are split out into separate Ruby Gems.</p>
             </div>
           </a>
         </div>
@@ -99,7 +113,7 @@
           <div class="col-12 col-md">
             <img src="images/logo-footer@2x.png" alt="Stealth Framework"><br /><br />
             "Stealth", "Stealth Framework", and the Stealth logo are trademarks of The Black Ops Bureau, Inc. All rights reserved.<br /><br />
-            Code licensed under MIT
+            Stealth source code is released under the <a href="https://opensource.org/licenses/MIT">MIT License</a>.
           </div>
         </div>
       </div>
