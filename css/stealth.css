@@ -11,6 +11,15 @@ h1, h2, h3 {
   color: #000A38;
 }
 
+h1.tagline {
+  margin: 0;
+  padding: 0 0 60px;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: .008em;
+  line-height: 43px;
+}
+
 p.lead {
   opacity: .40;
   font-size: 16px;
@@ -87,9 +96,21 @@ a:active {
 
 .site-header a:hover {}
 
-.container p {
-  margin: 10px auto;
-  max-width: 600px;
+ul.value-prop-list {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 0;
+  list-style-type: none;
+}
+
+ul.value-prop-list li {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 24px;
+}
+
+ul.value-prop-list li a, ul.value-prop-list li a:visited {
+  color: #FF0081;
 }
 
 .items {
