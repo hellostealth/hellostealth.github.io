@@ -13,7 +13,6 @@
         <div class="Header">
           <div class="Title center">
             <img src="../images/logo.svg" alt="Stealth Framework">
-            <span class="subtext"></span>
           </div>
         </div>
 
@@ -63,6 +62,10 @@
 
                 <div class="item">
                   <a href="#nlp_integrations">NLP Integrations</a>
+                </div>
+
+                <div class="item">
+                  <a href="#analytics_integrations">Analytics Integrations</a>
                 </div>
 
                 <div class="item">
@@ -140,9 +143,9 @@
 
 <p>First, download ngrok here: <a href="https://ngrok.com/download">https://ngrok.com/download</a></p>
 
-<p>After you download ngrok, start your Stealth server. Once Stealth is started, you can open up a public tunnel to your stealth server and port (default 3000) like this:</p>
+<p>After you download ngrok, start your Stealth server as detailed above. Once Stealth is started, you can open up a public tunnel to your Stealth server and port (default 5000) like this:</p>
 
-<p><code>ngrok http 3000</code></p>
+<p><code>ngrok http 5000</code></p>
 
 <p>ngrok should then display a unique ngrok local tunnel URL to your machine.</p>
 
@@ -240,7 +243,7 @@
 
 <p>For example:</p>
 
-<pre class="chroma">  <span class="k">def</span> <span class="nc"></span><span class="o"></span><span class="nf">say_hello</span>
+<pre class="chroma">  <span class="k">def</span> <span class="nf">say_hello</span>
     <span class="n">send_replies</span>
   <span class="k">end</span>
 </pre>
@@ -253,7 +256,7 @@
 
 <p>For example:</p>
 
-<pre class="chroma">  <span class="k">def</span> <span class="nc"></span><span class="o"></span><span class="nf">ask_weather</span>
+<pre class="chroma">  <span class="k">def</span> <span class="nf">ask_weather</span>
     <span class="n">send_replies</span>
     <span class="n">update_session_to</span> <span class="ss">state</span><span class="p">:</span> <span class="s1">&#39;get_weather_reponse&#39;</span>
   <span class="k">end</span>
@@ -267,7 +270,7 @@
 
 <p>For example:</p>
 
-<pre class="chroma">  <span class="k">def</span> <span class="nc"></span><span class="o"></span><span class="nf">get_weather_reponse</span>
+<pre class="chroma">  <span class="k">def</span> <span class="nf">get_weather_reponse</span>
     <span class="k">if</span> <span class="n">current_message</span><span class="o">.</span><span class="n">message</span> <span class="o">==</span> <span class="s1">&#39;Sunny&#39;</span>
       <span class="n">step_to</span> <span class="ss">state</span><span class="p">:</span> <span class="s2">&#34;say_wear_sunglasses&#34;</span>
     <span class="k">elsif</span> <span class="n">current_message</span><span class="o">.</span><span class="n">message</span> <span class="o">==</span> <span class="s1">&#39;Raining&#39;</span>
@@ -335,7 +338,7 @@ end
 
   <span class="n">before_action</span> <span class="ss">:current_user</span>
 
-  <span class="k">def</span> <span class="nc"></span><span class="o"></span><span class="nf">route</span>
+  <span class="k">def</span> <span class="nf">route</span>
     <span class="k">if</span> <span class="n">current_message</span><span class="o">.</span><span class="n">payload</span><span class="o">.</span><span class="n">present?</span>
       <span class="n">handle_payloads</span>
       <span class="n">current_message</span><span class="o">.</span><span class="n">payload</span> <span class="o">=</span> <span class="kp">nil</span>
@@ -388,7 +391,7 @@ end
 
 <p><code>send_replies</code> is used to trigger the associated reply files. For example:</p>
 
-<pre class="chroma"><span class="k">def</span> <span class="nc"></span><span class="o"></span><span class="nf">say_contact_us</span>
+<pre class="chroma"><span class="k">def</span> <span class="nf">say_contact_us</span>
   <span class="n">send_replies</span>
 <span class="k">end</span>
 </pre>
@@ -462,19 +465,38 @@ end
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="catch_all" href="#catch_all">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Catch All</h1>
-                <p>The power of three. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>Stealth Catch Alls are designed to handle the most common scenario inside of a bot. What happens when the user says something the bot doesn’t understand. The majority of bots will simply respond back with a generic “I don’t understand” and expect the user to figure it out. While this experience might be ok for some bots, we created a more advanced way of handling these experiences. The better your Catch Alls, the better your bot.</p>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="catch_all.triggering" href="#catch_all.triggering">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Triggering</h2>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<p>Catch all flows are automatically triggered when a controller action does not successfully <code>update_session_to</code> or <code>step_to</code>. This could be when a user says something that’s not handled or even a API call 500’s.</p>
 
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="catch_all.hierarchy" href="#catch_all.hierarchy">
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="catch_all.multi_level" href="#catch_all.multi_level">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Hierarchy</h2>
+</a>Multi Level</h2>
 
-<p>The power of three. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<p>Stealth also keeps track of how many times the catch all is triggered. This allows you to build experiences in which the user is provided different responses for the 2nd or 3rd time.</p>
+
+<p>By default a Stealth bot comes with the first level catch all. For example here is the controller action and associated reply:</p>
+
+<pre class="chroma"><span class="k">def</span> <span class="nf">level1</span>
+  <span class="n">send_replies</span>
+
+  <span class="k">if</span> <span class="n">previous_session_specifies_fails_to?</span>
+    <span class="n">step_to</span> <span class="ss">flow</span><span class="p">:</span> <span class="n">previous_session</span><span class="o">.</span><span class="n">flow_string</span><span class="p">,</span> <span class="ss">state</span><span class="p">:</span> <span class="n">previous_state</span><span class="o">.</span><span class="n">to_s</span>
+  <span class="k">else</span>
+    <span class="n">step_to</span> <span class="ss">session</span><span class="p">:</span> <span class="n">previous_session</span> <span class="o">-</span> <span class="mi">2</span><span class="o">.</span><span class="n">states</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre>
+
+<pre class="chroma">-<span class="w"> </span>reply_type<span class="p">:</span><span class="w"> </span>text<span class="w">
+</span><span class="w">  </span>text<span class="p">:</span><span class="w"> </span>Opps.<span class="w"> </span>It<span class="w"> </span>looks<span class="w"> </span>like<span class="w"> </span>something<span class="w"> </span>went<span class="w"> </span>wrong.<span class="w"> </span>Let&#39;s<span class="w"> </span>try<span class="w"> </span>that<span class="w"> </span>again<span class="w">
+</span><span class="w"></span></pre>
+
+<p>If you would like to expand the experience simply add a <code>level2</code> controller action and associated reply. You can go as far as you want. Catch Alls have no limit just make sure you increment using the standardized method names of <code>level1</code>, <code>level2</code>, <code>level3</code>, <code>level4</code>, etc.</p>
 
               </div>
 
@@ -482,36 +504,89 @@ end
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="messaging_integrations" href="#messaging_integrations">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Messaging Integrations</h1>
-                <p>The power of three. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>Stealth is designed for your bot to support one or many Messaging Services. For example, this could be SMS or both SMS and Facebook messenger. Messaging Integrations can be attached to your Stealth bot by adding the messaging integration gem to your <code>Gemfile</code>.</p>
 
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="messaging_integrations.services" href="#messaging_integrations.services">
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="messaging_integrations.gemfile" href="#messaging_integrations.gemfile">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Services</h2>
+</a><code>Gemfile</code></h2>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<pre class="chroma">source &#39;https://rubygems.org&#39;
+
+ruby &#39;2.5.1&#39;
+
+gem &#39;stealth&#39;, &#39;~&gt; 0.10.0&#39;
+
+# Uncomment to enable the Stealth Facebook Driver
+# gem &#39;stealth-facebook&#39;
+
+# Uncomment to enable the Stealth Twilio SMS Driver
+# gem &#39;stealth-twilio&#39;
+</pre>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="messaging_integrations.services_yml" href="#messaging_integrations.services_yml">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a><code>services.yml</code></h2>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<pre class="chroma">default<span class="p">:</span><span class="w"> </span><span class="cp">&amp;default</span><span class="w">
+</span><span class="w">  </span><span class="c"># ==========================================</span><span class="w">
+</span><span class="w">  </span><span class="c"># ===== Example Facebook Service Setup =====</span><span class="w">
+</span><span class="w">  </span><span class="c"># ==========================================</span><span class="w">
+</span><span class="w">  </span><span class="c"># facebook:</span><span class="w">
+</span><span class="w">  </span><span class="c">#   verify_token: XXXFACEBOOK_VERIFY_TOKENXXX</span><span class="w">
+</span><span class="w">  </span><span class="c">#   page_access_token: XXXFACEBOOK_ACCESS_TOKENXXX</span><span class="w">
+</span><span class="w">  </span><span class="c">#   setup:</span><span class="w">
+</span><span class="w">  </span><span class="c">#     greeting: # Greetings are broken up by locale</span><span class="w">
+</span><span class="w">  </span><span class="c">#       - locale: default</span><span class="w">
+</span><span class="w">  </span><span class="c">#         text: &#34;Welcome to the Stealth bot 🤖&#34;</span><span class="w">
+</span><span class="w">  </span><span class="c">#     persistent_menu:</span><span class="w">
+</span><span class="w">  </span><span class="c">#       - type: payload</span><span class="w">
+</span><span class="w">  </span><span class="c">#         text: Main Menu</span><span class="w">
+</span><span class="w">  </span><span class="c">#         payload: main_menu</span><span class="w">
+</span><span class="w">  </span><span class="c">#       - type: url</span><span class="w">
+</span><span class="w">  </span><span class="c">#         text: Visit our website</span><span class="w">
+</span><span class="w">  </span><span class="c">#         url: https://example.com</span><span class="w">
+</span><span class="w">  </span><span class="c">#       - type: call</span><span class="w">
+</span><span class="w">  </span><span class="c">#         text: Call us</span><span class="w">
+</span><span class="w">  </span><span class="c">#         payload: &#34;+4155330000&#34;</span><span class="w">
+</span><span class="w">  </span><span class="c">#</span><span class="w">
+</span><span class="w">  </span><span class="c"># ===========================================</span><span class="w">
+</span><span class="w">  </span><span class="c"># ======== Example SMS Service Setup ========</span><span class="w">
+</span><span class="w">  </span><span class="c"># ===========================================</span><span class="w">
+</span><span class="w">  </span><span class="c"># twilio:</span><span class="w">
+</span><span class="w">  </span><span class="c">#   account_sid: XXXTWILIO_ACCOUNT_SIDXXX</span><span class="w">
+</span><span class="w">  </span><span class="c">#   auth_token: XXXTWILIO_AUTH_TOKENXXX</span><span class="w">
+</span><span class="w">  </span><span class="c">#   from_phone: +14155330000</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>production<span class="p">:</span><span class="w">
+</span><span class="w">  </span>&lt;&lt;<span class="p">:</span><span class="w"> </span><span class="cp">*default</span><span class="w">
+</span><span class="w"></span>development<span class="p">:</span><span class="w">
+</span><span class="w">  </span>&lt;&lt;<span class="p">:</span><span class="w"> </span><span class="cp">*default</span><span class="w">
+</span><span class="w"></span>test<span class="p">:</span><span class="w">
+</span><span class="w">  </span>&lt;&lt;<span class="p">:</span><span class="w"> </span><span class="cp">*default</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span></pre>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="messaging_integrations.sealth_setup" href="#messaging_integrations.sealth_setup">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a><code>sealth setup</code></h2>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<p>Most Messaging integrations require a initial setup. For example, Facebook requires you to send a payload to define the default greeting and persistent menu. You can accomplish this by running the <code>stealth setup</code> followed by the integration. For example:</p>
+
+<p><code>stealth setup facebook</code></p>
+
+<p>Make sure to reference the specific messaging integration for more specifics.</p>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="messaging_integrations.officially_supported" href="#messaging_integrations.officially_supported">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Officially Supported</h2>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<p>Right now, Stealth officially supports Facebook Messenger and SMS through Twilio. While we plan to add more integrations in the future please feel free to add your own and let us know so we can keep this list updated. 😎</p>
+
+<p>Please check out the integration docs here:</p>
 
 <ul>
-<li>Facebook Messenger</li>
-<li>SMS (Twillio)</li>
-<li>Alexa</li>
+<li><a href="https://github.com/hellostealth/stealth-facebook">Facebook Messenger</a></li>
+<li><a href="https://github.com/hellostealth/stealth-twilio">SMS (Twillio)</a></li>
 </ul>
 
               </div>
@@ -520,7 +595,7 @@ end
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="nlp_integrations" href="#nlp_integrations">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>NLP Integrations</h1>
-                <p>Stealth also has official support for NLP and Machine Learning using Amazon Comprehend.</p>
+                <p>Like Messaging Inetegrations, Stealth also has official support for NLP and Machine Learning using Amazon Comprehend using our gem <code>stealth-aws-comprehend</code></p>
 
 <p>This gem adds the following methods to <code>current_message</code>:</p>
 
@@ -537,6 +612,18 @@ end
 </ol>
 
 <p>Checkout the official <a href="https://github.com/hellostealth/stealth-aws-comprehend">stealth-aws-comprehend</a> docs for more information.</p>
+
+              </div>
+
+              <div class="Page" id="analytics_integrations">
+                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="analytics_integrations" href="#analytics_integrations">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Analytics Integrations</h1>
+                <p>We’ve created an official gem for <a href="https://mixpanel.com">Mixpanel</a> support.</p>
+
+<p>This gem automatically tracks State Changes. They are sent to Mixpanel each time a state transition takes place. The user’s <code>recipient_id</code> is sent to Mixpanel as the <code>distinct_id</code>. Additional properties for flow and state are also sent with the event. This allows you to build custom funnels and custom events as you wish.</p>
+
+<p>Checkout the official <a href="https://github.com/hellostealth/stealth-mixpanel">stealth-mixpanel</a> docs for more information.</p>
 
               </div>
 
@@ -561,25 +648,25 @@ Flags:
       --version        Show application version.
 
 Commands:
-  stealth new [NAME]            # Creates a new Stealth bot
-  stealth generate flow [NAME]  # Generates a new flow (Controller, Helper and Replies)
-  stealth server                # Starts a stealth server
-  stealth setup [DRIVER]        # Runs setup tasks for a specified driver service
-  stealth console               # Starts a stealth console
-  stealth clear_sessions        # Clears all sessions in development
-  stealth help [COMMAND]        # Describe available commands or one specific command
-  stealth version               # Prints stealth version
+  stealth clear_sessions  # Clears all sessions in development
+  stealth console         # Starts a stealth console
+  stealth generate        # Generates scaffold Stealth files
+  stealth help [COMMAND]  # Describe available commands or one specific command
+  stealth new [NAME]      # Creates a new Stealth bot
+  stealth server          # Starts a stealth server
+  stealth setup           # Runs setup tasks for a specified service
+  stealth version         # Prints stealth version
 
 Examples:
 
   Start a new Stealth project.
-  $ steath new [BOT_NAME]
+  $ steath new [BOT NAME]
 
   Generate a new flow inside your Stealth project.
-  $ stealth generate flow [FLOW_NAME]
+  $ stealth generate flow [FLOW NAME]
 
   Run setup tasks for a specific driver.
-  $ stealth setup [DRIVER_NAME]
+  $ stealth setup [INTEGRATION NAME]
 
   Start a Stealth console.
   $ stealth console
@@ -591,7 +678,7 @@ Examples:
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="deployment" href="#deployment">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Deployment</h1>
-                <p>Stealth is a rack based web app. Which means it can be hosted on virtually anything. Virtual or Physical servers. However, we recommend Heroku because of it’s simplicity.</p>
+                <p>Stealth is a rack based web app. Which means it can be hosted on virtually anything. Virtual or Physical servers. However, we recommend Heroku because of it’s simplicity of deployment.</p>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="deployment.deploying_on_heroku" href="#deployment.deploying_on_heroku">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
