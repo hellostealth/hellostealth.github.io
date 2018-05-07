@@ -2,7 +2,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Stealth | Build awesome bots.</title>
+    <title>Stealth | An framework for creating awesome bots.</title>
     <link rel="stylesheet" href="theme/apex/css/index.css"/>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -13,6 +13,7 @@
         <div class="Header">
           <div class="Title center">
             <img src="../images/logo.svg" alt="Stealth Framework">
+            <span class="subtext"></span>
           </div>
         </div>
 
@@ -26,6 +27,10 @@
 
                 <div class="item">
                   <a href="#getting_started">Getting Started</a>
+                </div>
+
+                <div class="item">
+                  <a href="#local_development">Local Development</a>
                 </div>
 
                 <div class="item">
@@ -53,11 +58,15 @@
                 </div>
 
                 <div class="item">
-                  <a href="#testing">Testing</a>
+                  <a href="#messaging_integrations">Messaging Integrations</a>
                 </div>
 
                 <div class="item">
-                  <a href="#drivers">Drivers</a>
+                  <a href="#nlp_integrations">NLP Integrations</a>
+                </div>
+
+                <div class="item">
+                  <a href="#commands">Commands</a>
                 </div>
 
                 <div class="item">
@@ -73,9 +82,15 @@
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="introduction" href="#introduction">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Introduction</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>Stealth includes everything you need to quickly create powerful Text and Voice bots in Ruby.</p>
 
-<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Stealth is inspired by the Model-View-Controller (MVC) pattern. However, rather than <em>Views</em> Stealth uses <em>Replies</em>. Model-Reply-Controller (MRC).</p>
+
+<p>The <a href="#models">Model</a> layer represents your domain model (such as Account, User, Quote, etc.) and encapsulates the business logic that is specific to your bot. Stealth uses <a href="#models.active_record">ActiveRecord</a></p>
+
+<p>The <a href="#controllers">Controller</a> layer is responsible for handling incoming requests and providing a appropriate user response (reply).</p>
+
+<p>The <a href="#replies">Reply</a> layer is composed of “templates” that are responsible for providing appropriate replies back to the user.</p>
 
               </div>
 
@@ -83,23 +98,60 @@
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="getting_started" href="#getting_started">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Getting Started</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-<p>Install Stealth at the command prompt if you haven’t yet:</p>
+                <p>To get started install Stealth at the command prompt:</p>
 
 <pre class="chroma">  gem install stealth
 </pre>
 
-<p>At the command prompt, create a new Stealth bot:</p>
+<p>After, create yourself a new Stealth bot:</p>
 
 <pre class="chroma">  stealth new mybot
 </pre>
 
-<p>Change directory to <code>mybot</code> and start the server:</p>
+              </div>
 
-<pre class="chroma">  cd mybot
-  stealth server
-</pre>
+              <div class="Page" id="local_development">
+                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="local_development" href="#local_development">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Local Development</h1>
+                <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="local_development.starting_the_server" href="#local_development.starting_the_server">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Starting the Server</h2>
+
+<p>Change directory into to <code>mybot</code>. To boot this bot locally, we recommend the following:</p>
+
+<ol>
+<li><p><code>gem install foreman</code></p></li>
+
+<li><p>Start Redis</p></li>
+
+<li><p><code>foreman start -f Procfile.dev</code></p></li>
+</ol>
+
+<p>Using <a href="https://github.com/ddollar/foreman">foreman</a> will start the web server and Sidekiq processes together.</p>
+
+<p>You now have default Stealth bot ready for you to start adding functionality to.</p>
+
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="local_development.introspectable_tunnels_to_localhost" href="#local_development.introspectable_tunnels_to_localhost">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Introspectable Tunnels to localhost</h2>
+
+<p>When developing locally, every messaging service requires access to your server. We recommend downloading and using ngrok to create a local tunnel to your development machine. It’s pretty easy.</p>
+
+<p>First, download ngrok here: <a href="https://ngrok.com/download">https://ngrok.com/download</a></p>
+
+<p>After you download ngrok, start your Stealth server. Once Stealth is started, you can open up a public tunnel to your stealth server and port (default 3000) like this:</p>
+
+<p><code>ngrok http 3000</code></p>
+
+<p>ngrok should then display a unique ngrok local tunnel URL to your machine.</p>
+
+<p>When you provide your URL to the messaging service make sure to place <code>/incoming/&lt;service&gt;</code> after your URL. For example:</p>
+
+<ul>
+<li><code>https://abc1234.ngrok.io/incoming/facebook</code></li>
+<li><code>https://abc1234.ngrok.io/incoming/twilio</code></li>
+</ul>
 
               </div>
 
@@ -107,35 +159,122 @@
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="the_basics" href="#the_basics">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>The Basics</h1>
-                <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="the_basics.terminology" href="#the_basics.terminology">
+                <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="the_basics.directory_structure" href="#the_basics.directory_structure">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Terminology</h2>
+</a>Directory Structure</h2>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<p>When you open up your Stealth bot you will see the following file structure:</p>
+
+<pre class="chroma">├── Gemfile
+├── Procfile.dev
+├── README.md
+├── bot
+│   ├── controllers
+│   │   ├── bot_controller.rb
+│   │   ├── catch_alls_controller.rb
+│   │   ├── goodbyes_controller.rb
+│   │   └── hellos_controller.rb
+│   ├── flow_map.rb
+│   ├── helpers
+│   │   └── bot_helper.rb
+│   └── replies
+│       ├── catch_alls
+│       │   └── level1.yml
+│       ├── goodbyes
+│       │   └── say_goodbye.yml
+│       └── hellos
+│           └── say_hello.yml
+├── config
+│   ├── boot.rb
+│   ├── environment.rb
+│   ├── initializers
+│   ├── puma.rb
+│   ├── services.yml
+│   └── sidekiq.yml
+└── config.ru
+</pre>
+
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="the_basics.flows" href="#the_basics.flows">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Flows</h2>
+
+<p>A <code>Flow</code> is a general term to describe a complete user interaction with the bot. For example, if a user was using your bot to retrieve a insurance quote. This would be referred to as a <code>Quotes</code> flows.</p>
+
+<p>A flow always has a controller file and it’s associated reply files. It could also include a model file if you’re interacting with data.</p>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="the_basics.default_flows" href="#the_basics.default_flows">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Default Flows</h2>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<p>When you generate a new Stealth bot it comes packaged with a few default flows to get you started.</p>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="the_basics.hello_goodbye" href="#the_basics.hello_goodbye">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Hello &amp; Goodbye</h2>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<p>The first ones are the <code>Hello</code> and <code>Goodbye</code> flows. These are blank examples on how to greet (say hello) and dismiss (say goodbye) your users. You are encouraged to customize these flows as you see fit.</p>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="the_basics.catch_all" href="#the_basics.catch_all">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Catch All</h2>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<p>Stealth also comes packaged with a multi-level <code>Catch All</code> flow. Stealth Catch Alls are designed to handle scenarios in which the user says something the bot is not expecting.</p>
 
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="the_basics.directory_structure" href="#the_basics.directory_structure">
+<p>For example, let’s say you <em>ask</em> the user for their 5 digit zip code and the user replies with a city name. You may not handle for city names, only numeric zip codes. The catch all flows are designed to provide an consistent experience to guide the user back on track to providing a 5 digit zip codes.</p>
+
+<p>It’s recommend that bot designers and developers spend sufficient time strategizing around these flows.</p>
+
+<p>See the Catch All (#catchalls) section for more information on how Stealth handles <code>Catch All</code> flows.</p>
+
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="the_basics.say_ask_get" href="#the_basics.say_ask_get">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Directory Structure</h2>
+</a>Say, Ask, Get</h2>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<p>Stealth recommends follows the Say, Ask, Get prefix for both controller actions and replies.</p>
+
+<h3 class="Heading"><a class="Anchor" aria-hidden="true" id="the_basics.say_ask_get.say" href="#the_basics.say_ask_get.say">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>SAY</h3>
+
+<p><em>SAY</em> Stealth actions are for <em>saying</em> something to the user.</p>
+
+<p>For example:</p>
+
+<pre class="chroma">  <span class="k">def</span> <span class="nc"></span><span class="o"></span><span class="nf">say_hello</span>
+    <span class="n">send_replies</span>
+  <span class="k">end</span>
+</pre>
+
+<h3 class="Heading"><a class="Anchor" aria-hidden="true" id="the_basics.say_ask_get.ask" href="#the_basics.say_ask_get.ask">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>ASK</h3>
+
+<p><em>ASK</em> Stealth actions are for <em>asking</em> something from the user.</p>
+
+<p>For example:</p>
+
+<pre class="chroma">  <span class="k">def</span> <span class="nc"></span><span class="o"></span><span class="nf">ask_weather</span>
+    <span class="n">send_replies</span>
+    <span class="n">update_session_to</span> <span class="ss">state</span><span class="p">:</span> <span class="s1">&#39;get_weather_reponse&#39;</span>
+  <span class="k">end</span>
+</pre>
+
+<h3 class="Heading"><a class="Anchor" aria-hidden="true" id="the_basics.say_ask_get.get" href="#the_basics.say_ask_get.get">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>GET</h3>
+
+<p><em>GET</em> Stealth actions are for <em>getting</em> and parsing the reponse from the user.</p>
+
+<p>For example:</p>
+
+<pre class="chroma">  <span class="k">def</span> <span class="nc"></span><span class="o"></span><span class="nf">get_weather_reponse</span>
+    <span class="k">if</span> <span class="n">current_message</span><span class="o">.</span><span class="n">message</span> <span class="o">==</span> <span class="s1">&#39;Sunny&#39;</span>
+      <span class="n">step_to</span> <span class="ss">state</span><span class="p">:</span> <span class="s2">&#34;say_wear_sunglasses&#34;</span>
+    <span class="k">elsif</span> <span class="n">current_message</span><span class="o">.</span><span class="n">message</span> <span class="o">==</span> <span class="s1">&#39;Raining&#39;</span>
+      <span class="n">step_to</span> <span class="ss">state</span><span class="p">:</span> <span class="s2">&#34;say_dont_forget_umbrella&#34;</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+</pre>
 
               </div>
 
@@ -147,13 +286,38 @@
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>State Machines</h2>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<p>TODO: Need to understand more about how Stealth handles the it’s session around State Machines.</p>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="sessions.redis_backed_sessions" href="#sessions.redis_backed_sessions">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Redis Backed Sessions</h2>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<p>TODO Need to understand how redis fits in here.</p>
+
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="sessions.current_user" href="#sessions.current_user">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a><code>current_user</code></h2>
+
+<p>The user is available to you at anytime using <code>current_user</code>.</p>
+
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="sessions.current_session" href="#sessions.current_session">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a><code>current_session</code></h2>
+
+<p>The users’ session is available to you at anytime using <code>current_session</code>.</p>
+
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="sessions.current_message" href="#sessions.current_message">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a><code>current_message</code></h2>
+
+<p>The users’ current message is available to you at anytime using <code>current_message</code>. Note: <code>current_message</code> is full payload back from the specific messaging service.</p>
+
+<p>For example:</p>
+
+<pre class="chroma">if current_message.message = &#34;hello&#34;
+  step_to flow: &#39;hello&#39;, state: &#39;say_hello&#39;
+end
+</pre>
 
               </div>
 
@@ -161,7 +325,7 @@
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="controllers" href="#controllers">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Controllers</h1>
-                <p>The power of three. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>Controllers are responsible for handling incoming requests and providing a appropriate response back to the user (replies). Every Stealth project comes with a default <code>bot_controller.rb</code></p>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="controllers.bot_controller_rb" href="#controllers.bot_controller_rb">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
@@ -188,37 +352,46 @@
 <span class="k">end</span>
 </pre>
 
-<p>The power of three. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="controllers.stepping_jumping_and_updating_sessions" href="#controllers.stepping_jumping_and_updating_sessions">
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="controllers.stepping_and_updating_sessions" href="#controllers.stepping_and_updating_sessions">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Stepping, Jumping and Updating Sessions</h2>
+</a>Stepping and Updating Sessions</h2>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<p>Stealth provides a few built in methods to help you navigate a user through you bot.</p>
 
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="controllers.get_ask_and_say" href="#controllers.get_ask_and_say">
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="controllers.step_to" href="#controllers.step_to">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Get, Ask, and Say</h2>
+</a><code>step_to</code></h2>
 
-<p>The power of three. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<p>The <code>step_to</code> is used to move the user to another flow and/or state. <code>step_to</code> can accept either a <em>flow</em> or a <em>state</em>, or both. For example:</p>
 
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="controllers.callbacks" href="#controllers.callbacks">
+<p><code>step_to flow: &#39;hello&#39;</code> - This would redirect the user to the <code>hello</code> flow and start the <em>first</em> state in that flow as defined by the <code>flow_map.rb</code> file</p>
+
+<p><code>step_to state: &#39;say_hello&#39;</code> - This would redirect the user to the <code>say_hello</code> state inside the current flow.</p>
+
+<p><code>step_to flow: &#39;hello&#39;, state: &#39;say_hello&#39;</code> - This would redirect the user to the <code>hello</code> flow and start the <code>say_hello</code> state.</p>
+
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="controllers.update_session_to" href="#controllers.update_session_to">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Callbacks</h2>
+</a><code>update_session_to</code></h2>
 
-<p>The power of three. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<p>Similar to <code>step_to</code>, <code>update_session_to</code> is used to update the user’s session to a current flow and/or state. It accepts the same parameters.</p>
 
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="controllers.handle_payloads" href="#controllers.handle_payloads">
+<p><code>update_session_to flow: &#39;quote&#39;</code> - This would update the users session to the <code>quote</code> flow and use the <em>first</em> state in that flow as defined by the <code>flow_map.rb</code> file</p>
+
+<p><code>update_session_to state: &#39;ask_zip_code&#39;</code> - This would update the users session to the <code>ask_zip_code</code> state inside the current flow.</p>
+
+<p><code>step_to flow: &#39;quote&#39;, state: &#39;ask_zip_code&#39;</code> - This would update the users session to <code>quote</code> flow and the <code>ask_zip_code</code> state.</p>
+
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="controllers.send_replies" href="#controllers.send_replies">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a><code>handle_payloads</code></h2>
+</a><code>send_replies</code></h2>
 
-<p>The power of three. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<p><code>send_replies</code> is used to trigger the associated reply files. For example:</p>
 
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="controllers.current_user" href="#controllers.current_user">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a><code>current_user</code></h2>
-
-<p>The power of three. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<pre class="chroma"><span class="k">def</span> <span class="nc"></span><span class="o"></span><span class="nf">say_contact_us</span>
+  <span class="n">send_replies</span>
+<span class="k">end</span>
+</pre>
 
               </div>
 
@@ -264,7 +437,9 @@
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="replies" href="#replies">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Replies</h1>
-                <p>Welcome to our Views.</p>
+                <p>Stealth replies are used to send one or many <em>reply types</em> back to the user. Reply types are dependent on the specific messaging service you’re using. Each messaging integration will detail it’s supported reply types in it’s respective docs.</p>
+
+<p>However, here is a generic reply using text, delays, and suggestions.</p>
 
 <pre class="chroma">-<span class="w"> </span>reply_type<span class="p">:</span><span class="w"> </span>text<span class="w">
 </span><span class="w">  </span>text<span class="p">:</span><span class="w"> </span><span class="s2">&#34;Hello. Welcome to our Bot.&#34;</span><span class="w">
@@ -280,25 +455,6 @@
 </span><span class="w">    </span>-<span class="w"> </span>text<span class="p">:</span><span class="w"> </span><span class="s2">&#34;Yes&#34;</span><span class="w">
 </span><span class="w">    </span>-<span class="w"> </span>text<span class="p">:</span><span class="w"> </span><span class="s2">&#34;No&#34;</span><span class="w">
 </span><span class="w"></span></pre>
-
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="replies.variants" href="#replies.variants">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Variants</h2>
-
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="replies.send_replies" href="#replies.send_replies">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a><code>send_replies</code></h2>
-
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-<pre class="chroma"><span class="k">def</span> <span class="nc"></span><span class="o"></span><span class="nf">say_contact_us</span>
-  <span class="n">send_replies</span>
-<span class="k">end</span>
-</pre>
-
-<p>The power of three. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
               </div>
 
@@ -322,39 +478,31 @@
 
               </div>
 
-              <div class="Page" id="testing">
-                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="testing" href="#testing">
+              <div class="Page" id="messaging_integrations">
+                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="messaging_integrations" href="#messaging_integrations">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Testing</h1>
+</a>Messaging Integrations</h1>
                 <p>The power of three. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="testing.tbd" href="#testing.tbd">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>TBD</h2>
-
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-              </div>
-
-              <div class="Page" id="drivers">
-                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="drivers" href="#drivers">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Drivers</h1>
-                <p>The power of three. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="drivers.services" href="#drivers.services">
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="messaging_integrations.services" href="#messaging_integrations.services">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Services</h2>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="drivers.services_yml" href="#drivers.services_yml">
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="messaging_integrations.services_yml" href="#messaging_integrations.services_yml">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a><code>services.yml</code></h2>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="drivers.officially_supported" href="#drivers.officially_supported">
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="messaging_integrations.sealth_setup" href="#messaging_integrations.sealth_setup">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a><code>sealth setup</code></h2>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="messaging_integrations.officially_supported" href="#messaging_integrations.officially_supported">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Officially Supported</h2>
 
@@ -368,17 +516,114 @@
 
               </div>
 
+              <div class="Page" id="nlp_integrations">
+                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="nlp_integrations" href="#nlp_integrations">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>NLP Integrations</h1>
+                <p>Stealth also has official support for NLP and Machine Learning using Amazon Comprehend.</p>
+
+<p>This gem adds the following methods to <code>current_message</code>:</p>
+
+<ol>
+<li><p><code>language</code> identifies text written in over 100 languages and returns the dominant language in <code>current_message</code> with a confidence score</p></li>
+
+<li><p><code>entities</code> returns the named entities (“People,” “Places,” “Locations,” etc.) present in <code>current_message</code></p></li>
+
+<li><p><code>key_phrases</code> returns the key phrases or talking points and a confidence score to support for the <code>current_message</code></p></li>
+
+<li><p><code>sentiment</code> returns the overall sentiment (Positive, Negative, Neutral, or Mixed) for the <code>current_message</code></p></li>
+
+<li><p><code>sentiment_score</code> returns the scoring for each sentiment (Positive, Negative, Neutral, or Mixed) for the <code>current_message</code></p></li>
+</ol>
+
+<p>Checkout the official <a href="https://github.com/hellostealth/stealth-aws-comprehend">stealth-aws-comprehend</a> docs for more information.</p>
+
+              </div>
+
+              <div class="Page" id="commands">
+                <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="commands" href="#commands">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Commands</h1>
+                <p>Stealth provides the <code>stealth</code> command-line program, used to generate bots, generate flows, start a console, run driver setup tasks and run the server.</p>
+
+<p>To view details for a command at any time use <code>stealth help</code>.</p>
+
+<pre class="chroma">Usage:
+
+  stealth [&lt;flags&gt;] &lt;command&gt; [&lt;args&gt; ...]
+
+Flags:
+
+  -h, --help           Output usage information.
+  -C, --chdir=&#34;.&#34;      Change working directory.
+  -v, --verbose        Enable verbose log output.
+      --format=&#34;text&#34;  Output formatter.
+      --version        Show application version.
+
+Commands:
+  stealth new [NAME]            # Creates a new Stealth bot
+  stealth generate flow [NAME]  # Generates a new flow (Controller, Helper and Replies)
+  stealth server                # Starts a stealth server
+  stealth setup [DRIVER]        # Runs setup tasks for a specified driver service
+  stealth console               # Starts a stealth console
+  stealth clear_sessions        # Clears all sessions in development
+  stealth help [COMMAND]        # Describe available commands or one specific command
+  stealth version               # Prints stealth version
+
+Examples:
+
+  Start a new Stealth project.
+  $ steath new [BOT_NAME]
+
+  Generate a new flow inside your Stealth project.
+  $ stealth generate flow [FLOW_NAME]
+
+  Run setup tasks for a specific driver.
+  $ stealth setup [DRIVER_NAME]
+
+  Start a Stealth console.
+  $ stealth console
+</pre>
+
+              </div>
+
               <div class="Page" id="deployment">
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="deployment" href="#deployment">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Deployment</h1>
-                <p>The power of three. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>Stealth is a rack based web app. Which means it can be hosted on virtually anything. Virtual or Physical servers. However, we recommend Heroku because of it’s simplicity.</p>
 
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="deployment.heroku" href="#deployment.heroku">
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="deployment.deploying_on_heroku" href="#deployment.deploying_on_heroku">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Heroku</h2>
+</a>Deploying on Heroku</h2>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<p>Since Stealth is a Ruby based Rack app, it supports deploying to <a href="http://herokuapp.com">Heroku</a> out of the box. Here is quick guide to get you started.</p>
+
+<p>If you haven’t, make sure to track your bot in Git</p>
+
+<pre class="chroma">  $ git init
+  Initialized empty Git repository in .git/
+  $ git add .
+  $ git commit -m &#34;My first commit&#34;
+  Created initial commit 5df2d09: My first commit
+   42 files changed, 470 insertions(+)
+    create mode 100644 Gemfile
+    create mode 100644 Gemfile.lock
+    create mode 100644 Procfile
+  ...
+</pre>
+
+<p>After you have your bot tracked with Git, you’re ready to deploy to Heroku. Next, we’ll add our bot to Heroku using:</p>
+
+<pre class="chroma">$ heroku apps:create &lt;BOT NAME&gt;
+</pre>
+
+<p>Then deploy your bot to Heroku.</p>
+
+<pre class="chroma">$ git push heroku master
+</pre>
+
+<p>Once deployed, make sure to enable both the <code>Heroku Postgres</code> and <code>Heroku Redis</code> addons. Additionally, make sure you run any <code>stealth setup</code> commands to configure your messaging service webhooks for your new production environments.</p>
 
               </div>
 
