@@ -12,14 +12,10 @@ h1, h2, h3 {
   color: #000A38;
 }
 
-h1.tagline {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 0 75px;
-  font-size: 36px;
-  font-weight: 800;
-  letter-spacing: .008em;
-  line-height: 43px;
+@media only screen and (max-width: 768px) {
+    .display-4{
+      font-size: 2.5rem !important;
+    }
 }
 
 p.lead {
