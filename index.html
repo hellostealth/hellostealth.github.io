@@ -52,21 +52,28 @@
 
   <body>
 
-    <nav class="site-header sticky-top py-1">
-      <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2 logo" href="/">
-          <img src="images/logo.svg" alt="Stealth Framework">
-        </a>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 px-4">
 
-        <ul>
-          <li><a href="/overview">Overview</a></li>
-          <li><a href="/docs">Documentation</a></li>
-          <li><a href="/docs">GitHub</a></li>
-        </ul>
-      </div>
-    </nav>
+        <a href="/" class="navbar-brand"><img src="images/logo.svg" alt="Stealth Framework"></a>
 
-    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav m-auto text-center">
+            <li class="nav-item"><a href="/docs" class="nav-link">Documentation</a></li>
+            <li class="nav-item"><a href="https://github.com/hellostealth/stealth" class="nav-link">Github</a></li>
+            <li class="nav-item"><a href="https://whoisblackops.com/" class="nav-link">Black Ops</a></li>
+          </ul>
+        </div>
+
+      </nav>
+    </header>
+
+
+    <div class="d-flex align-items-center overflow-hidden p-md-5 start-nav-change text-center glitch-holder height-100">
       <div class="col-lg-8 p-md-0 mx-auto my-5">
         <h1 class="display-4 font-weight-bold">
           Build amazing chatbots with tools you know and love.
@@ -84,6 +91,7 @@
         <li class="value-prop-list-item"><strong>Hosting you know.</strong> Stealth is a <a href="http://rack.github.io">Rack</a> application. That means your bots can be deployed using familiar services like <a href="https://www.docker.com">Docker</a> and <a href="https://www.heroku.com">Heroku</a>.</li>
         <li class="value-prop-list-item"><strong>Ready for production.</strong> Stealth already powers bots for large, well-known brands including: <a href="https://www.humana.com">Humana</a>, <a href="https://www.tradestation.com">TradeStation</a>, <a href="https://www.havenlife.com">Haven Life</a>, and <a href="https://www.barkbox.com">BarkBox</a>.</li>
         <li class="value-prop-list-item"><strong>Open source.</strong> Stealth is MIT licensed to ensure you own your bot. More importantly, we welcome contributors to help make Stealth even better.</li>
+        <li class="value-prop-list-item"><strong>Hire us.</strong> Finally, Stealth was created by <a href="https://www.whoisblackops.com">Black Ops</a>. If you would like to hire us or need additional help building your bot, reach out!</li>
       </ul>
 
       <div class="mt-4 p-5 items">
