@@ -6,7 +6,7 @@ body {
   background-image: url('../images/pattern.png');
 }
 
-// View Height
+/* View Height */
 .height-25{min-height: 25vh;}
 .height-50{min-height: 50vh;}
 .height-65{min-height: 65vh;}
