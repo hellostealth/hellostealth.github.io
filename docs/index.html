@@ -2,7 +2,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Stealth | An framework for creating awesome bots.</title>
+    <title>Stealth | Build amazing chatbots with tools you know and love.</title>
     <link rel="stylesheet" href="theme/apex/css/index.css"/>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -53,7 +53,7 @@
                 </div>
 
                 <div class="item">
-                  <a href="#catch_all">Catch All</a>
+                  <a href="#catch_all">CatchAll</a>
                 </div>
 
                 <div class="item">
@@ -85,15 +85,50 @@
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="introduction" href="#introduction">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Introduction</h1>
-                <p>Stealth includes everything you need to quickly create powerful Text and Voice bots in Ruby.</p>
+                <p>Stealth includes everything you need to build amazing chatbots with tools you know and love.</p>
 
-<p>Stealth is inspired by the Model-View-Controller (MVC) pattern. However, rather than <em>Views</em> Stealth uses <em>Replies</em>. Model-Reply-Controller (MRC).</p>
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="introduction.assumptions" href="#introduction.assumptions">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Assumptions</h2>
 
-<p>The <a href="#models">Model</a> layer represents your domain model (such as Account, User, Quote, etc.) and encapsulates the business logic that is specific to your bot. Stealth uses <a href="#models.active_record">ActiveRecord</a></p>
+<p>These docs are designed for intermediate Ruby developers who want to get started with the Stealth framework.</p>
 
-<p>The <a href="#controllers">Controller</a> layer is responsible for handling incoming requests and providing a appropriate user response (reply).</p>
+<p>If you do not yet have experience with Ruby, we would recommend checking out these guides first:</p>
 
-<p>The <a href="#replies">Reply</a> layer is composed of “templates” that are responsible for providing appropriate replies back to the user.</p>
+<ul>
+<li><a href="https://www.ruby-lang.org/en/documentation/">Official Ruby website</a></li>
+<li><a href="https://github.com/EbookFoundation/free-programming-books/blob/master/free-programming-books.md#ruby">List of Free Programming Books</a></li>
+</ul>
+
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="introduction.what_is_stealth" href="#introduction.what_is_stealth">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>What is Stealth?</h2>
+
+<p>Stealth is an open source Ruby framework for conversational voice and text chatbots.</p>
+
+<p>Stealth is inspired by the Model-View-Controller (MVC) pattern. However, instead of calling them <em>Views</em> Stealth refers to them as <em>Replies</em> to better match the chatbot domain.</p>
+
+<ul>
+<li><p>The <a href="#models">Model</a> layer represents your data model (such as Account, User, Quote, etc.) and encapsulates the business logic that is specific to your bot. By default, Stealth uses <a href="#models.active_record">ActiveRecord</a>.</p></li>
+
+<li><p>The <a href="#controllers">Controller</a> layer is responsible for handling incoming requests from messaging platforms and providing and transmitting the response (reply).</p></li>
+
+<li><p>The <a href="#replies">Reply</a> layer is composed of “templates” that are responsible for constructing the respective response.</p></li>
+</ul>
+
+<p>In addition to being inspired by Model-View-Controller (MVC) pattern, Stealth as a few other awesome things built in for you.</p>
+
+<ul>
+<li><p><strong>Plug and play services.</strong> Every service integration in Stealth is a Ruby gem. One bot can support <a href="#messaging_integrations">multiple chat services</a> (i.e. Facebook Messenger, SMS, Alexa, and more) and multiple NLP/NLU services.</p></li>
+
+<li><p><strong>Advanced tooling.</strong> From web servers to continuous integration testing, Stealth is built to take advantage of all the great work done by the web development community.</p></li>
+
+<li><p><strong>Hosting you know.</strong> Stealth is a Rack application. That means your bots can be <a href="#deployment">deployed</a> using familiar services like Docker and Heroku.</p></li>
+
+<li><p><strong>Ready for production.</strong> Stealth already powers bots for large, well-known brands including: Humana, TradeStation, Haven Life, and BarkBox.</p></li>
+
+<li><p><strong>Open source.</strong> Stealth is MIT licensed to ensure you own your bot. More importantly, we welcome contributors to help make Stealth even better.</p></li>
+</ul>
 
               </div>
 
@@ -101,14 +136,24 @@
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="getting_started" href="#getting_started">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Getting Started</h1>
-                <p>To get started install Stealth at the command prompt:</p>
+                <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="getting_started.ruby" href="#getting_started.ruby">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Ruby</h2>
+
+<p>Stealth has been tested on Ruby (MRI) <code>2.4.x</code> and <code>2.5.x</code>. While we don’t require any C-based Ruby gems, we haven’t yet certified Stealth on other VMs (such as JRuby).</p>
+
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="getting_started.installation" href="#getting_started.installation">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Installation</h2>
+
+<p>You can install Stealth via RubyGems:</p>
 
 <pre class="chroma">  gem install stealth
 </pre>
 
-<p>After, create yourself a new Stealth bot:</p>
+<p>Next, you can create a new Stealth bot:</p>
 
-<pre class="chroma">  stealth new mybot
+<pre class="chroma">  stealth new &lt;bot_name&gt;
 </pre>
 
               </div>
@@ -117,44 +162,50 @@
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="local_development" href="#local_development">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Local Development</h1>
-                <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="local_development.starting_the_server" href="#local_development.starting_the_server">
+                <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="local_development.prerequisites" href="#local_development.prerequisites">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Prerequisites</h2>
+
+<p>Stealth bundles <a href="https://github.com/mperham/sidekiq">Sidekiq</a> in order to process background jobs. Therefore, it is required to run Redis in order to boot up a Stealth server.</p>
+
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="local_development.starting_the_server" href="#local_development.starting_the_server">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Starting the Server</h2>
 
-<p>Change directory into to <code>mybot</code>. To boot this bot locally, we recommend the following:</p>
+<p>Once you have made your current working directory your Stealth bot, you can install gems:</p>
 
-<ol>
-<li><p><code>gem install foreman</code></p></li>
+<pre class="chroma">bundle install
+</pre>
 
-<li><p>Start Redis</p></li>
+<p>To boot your bot:</p>
 
-<li><p><code>foreman start -f Procfile.dev</code></p></li>
-</ol>
+<pre class="chroma">stealth server
+</pre>
 
-<p>Using <a href="https://github.com/ddollar/foreman">foreman</a> will start the web server and Sidekiq processes together.</p>
+<p>You can also use <code>stealth s</code>. This will use the <a href="https://github.com/ddollar/foreman">foreman</a> gem to start the web server and Sidekiq processes together. Redis will have to be running for the server to start.</p>
 
-<p>You now have default Stealth bot ready for you to start adding functionality to.</p>
+<p>That’s it! You are now running Stealth.</p>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="local_development.introspectable_tunnels_to_localhost" href="#local_development.introspectable_tunnels_to_localhost">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Introspectable Tunnels to localhost</h2>
 
-<p>When developing locally, every messaging service requires access to your server. We recommend downloading and using ngrok to create a local tunnel to your development machine. It’s pretty easy.</p>
+<p>When developing locally, messaging services require access to your server in order to transmit user messages. We recommend downloading and using <a href="https://ngrok.com/download">ngrok</a> to create a local tunnel to your development machine.</p>
 
-<p>First, download ngrok here: <a href="https://ngrok.com/download">https://ngrok.com/download</a></p>
+<ol>
+<li>Download <a href="https://ngrok.com/download">ngrok</a></li>
+<li>Start your Stealth server as detailed above.</li>
+<li>Open up an ngrok tunnel to your Stealth server and port (default 5000) like this: <code>ngrok http 5000</code>. ngrok will output a unique ngrok local tunnel URL to your machine.</li>
+</ol>
 
-<p>After you download ngrok, start your Stealth server as detailed above. Once Stealth is started, you can open up a public tunnel to your Stealth server and port (default 5000) like this:</p>
-
-<p><code>ngrok http 5000</code></p>
-
-<p>ngrok should then display a unique ngrok local tunnel URL to your machine.</p>
-
-<p>When you provide your URL to the messaging service make sure to place <code>/incoming/&lt;service&gt;</code> after your URL. For example:</p>
+<p>When you provide your local ngrok URL to a messaging service, you will have to add <code>/incoming/&lt;service&gt;</code>. For example:</p>
 
 <ul>
 <li><code>https://abc1234.ngrok.io/incoming/facebook</code></li>
 <li><code>https://abc1234.ngrok.io/incoming/twilio</code></li>
 </ul>
+
+<p>More details on service specific settings can be found on the GitHub page for each service gem.</p>
 
               </div>
 
@@ -171,15 +222,19 @@
 <pre class="chroma">├── Gemfile
 ├── Procfile.dev
 ├── README.md
+├── Rakefile
 ├── bot
 │   ├── controllers
 │   │   ├── bot_controller.rb
 │   │   ├── catch_alls_controller.rb
+│   │   ├── concerns
 │   │   ├── goodbyes_controller.rb
 │   │   └── hellos_controller.rb
-│   ├── flow_map.rb
 │   ├── helpers
 │   │   └── bot_helper.rb
+│   ├── models
+│   │   ├── bot_record.rb
+│   │   └── concerns
 │   └── replies
 │       ├── catch_alls
 │       │   └── level1.yml
@@ -189,51 +244,98 @@
 │           └── say_hello.yml
 ├── config
 │   ├── boot.rb
+│   ├── database.yml
 │   ├── environment.rb
+│   ├── flow_map.rb
 │   ├── initializers
 │   ├── puma.rb
 │   ├── services.yml
 │   └── sidekiq.yml
-└── config.ru
+├── config.ru
+└── db
+    └── seeds.rb
 </pre>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="the_basics.flows" href="#the_basics.flows">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Flows</h2>
 
-<p>A <code>Flow</code> is a general term to describe a complete user interaction with the bot. For example, if a user was using your bot to retrieve a insurance quote. This would be referred to as a <code>Quotes</code> flows.</p>
+<p>A <code>Flow</code> is a general term to describe a complete interaction between a user and the bot. Flows are comprised of <code>states</code>, like a finite state machine.</p>
 
-<p>A flow always has a controller file and it’s associated reply files. It could also include a model file if you’re interacting with data.</p>
+<p>For example, if a user was using your bot to receive an insurance quote, the flow might be named <code>quote</code>. Note: Stealth requires that flows be named in the singular form, like Rails.</p>
+
+<p>A flow consists of the following components:</p>
+
+<ol>
+<li>A controller file, named in the plural form. For example, a <code>quote</code> flow would have a corresponding <code>QuotesController</code>.</li>
+<li>Replies. Each flow will have a directory in the <code>replies</code> directory in plural form. Again using the <code>quote</code> flow example, the directory would named <code>quotes</code>.</li>
+<li>An entry in <code>config/flow_map.rb</code>. The <code>FlowMap</code> file is where each flow and it’s respective states are defined for your bot.</li>
+</ol>
+
+<p>Flows can be generated using a generator:</p>
+
+<pre class="chroma">  stealth generate flow &lt;NAME&gt;
+</pre>
+
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="the_basics.flow_map" href="#the_basics.flow_map">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>FlowMap</h2>
+
+<p>The <code>FlowMap</code> file is where each flow and it’s respective states are defined for your bot. Here is an example <code>flow_map.rb</code>:</p>
+
+<pre class="chroma"><span class="k">class</span> <span class="nc">FlowMap</span>
+
+  <span class="kp">include</span> <span class="no">Stealth</span><span class="o">::</span><span class="no">Flow</span>
+
+  <span class="n">flow</span> <span class="ss">:hello</span> <span class="k">do</span>
+    <span class="n">state</span> <span class="ss">:say_hello</span>
+    <span class="n">state</span> <span class="ss">:ask_name</span>
+    <span class="n">state</span> <span class="ss">:get_name</span><span class="p">,</span> <span class="ss">fails_to</span><span class="p">:</span> <span class="ss">:ask_name</span>
+  <span class="k">end</span>
+
+  <span class="n">flow</span> <span class="ss">:goodbye</span> <span class="k">do</span>
+    <span class="n">state</span> <span class="ss">:say_goodbye</span>
+  <span class="k">end</span>
+
+  <span class="n">flow</span> <span class="ss">:catch_all</span> <span class="k">do</span>
+    <span class="n">state</span> <span class="ss">:level1</span>
+    <span class="n">state</span> <span class="ss">:level2</span>
+  <span class="k">end</span>
+
+<span class="k">end</span>
+</pre>
+
+<p>Here we have defined three flows: <code>hello</code>, <code>goodbye</code>, and <code>catch_all</code>. For the most part, these are default flows that are generated automatically when you create a new bot but we have made a few changes to highlight some functionality.</p>
+
+<p>In the <code>hello</code> flow, the second state asks a user for their name. In the third state of <code>hello</code>, you see another option: <code>fails_to</code>. This is used to tell Stealth to return the user to the specified state if the <code>get_name</code> state raises an error or fails in another way. There are more details in the <code>CatchAll</code> section below.</p>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="the_basics.default_flows" href="#the_basics.default_flows">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Default Flows</h2>
 
-<p>When you generate a new Stealth bot it comes packaged with a few default flows to get you started.</p>
+<p>When you generate a new Stealth bot, it comes packaged with three default flows. While you will likely add many flows of your own, we recommend keeping these three flows as they encourage good bot building practices.</p>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="the_basics.hello_goodbye" href="#the_basics.hello_goodbye">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Hello &amp; Goodbye</h2>
 
-<p>The first ones are the <code>Hello</code> and <code>Goodbye</code> flows. These are blank examples on how to greet (say hello) and dismiss (say goodbye) your users. You are encouraged to customize these flows as you see fit.</p>
+<p>These two flows make up the entrance and exit of your bot. We include blank examples on how to greet (say hello) and sendoff (say goodbye) your users. You can customize these flows to work with the design of your bot.</p>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="the_basics.catch_all" href="#the_basics.catch_all">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Catch All</h2>
+</a>CatchAll</h2>
 
-<p>Stealth also comes packaged with a multi-level <code>Catch All</code> flow. Stealth Catch Alls are designed to handle scenarios in which the user says something the bot is not expecting.</p>
+<p>Stealth also comes packaged with a <code>catch_all</code> flow. Stealth CatchAlls are designed to handle scenarios in which the user says something the bot is not expecting or the bot encounters an error.</p>
 
-<p>For example, let’s say you <em>ask</em> the user for their 5 digit zip code and the user replies with a city name. You may not handle for city names, only numeric zip codes. The catch all flows are designed to provide an consistent experience to guide the user back on track to providing a 5 digit zip codes.</p>
+<p>Error handling is one of the most important parts of building great bots. We recommend that bot designers and developers spend sufficient time building the CatchAll states.</p>
 
-<p>It’s recommend that bot designers and developers spend sufficient time strategizing around these flows.</p>
-
-<p>See the Catch All (#catchalls) section for more information on how Stealth handles <code>Catch All</code> flows.</p>
+<p>See the Catch All (#catchalls) section for more information on how Stealth handles <code>catch_all</code> flows.</p>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="the_basics.say_ask_get" href="#the_basics.say_ask_get">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Say, Ask, Get</h2>
 
-<p>Stealth recommends follows the Say, Ask, Get prefix for both controller actions and replies.</p>
+<p>Stealth recommends you use the <code>say</code>, <code>ask</code>, and <code>get</code> prefix for your flow state names. It’s not required, but it is a convention we have found helpful to keep state names under control. It also helps other developers on your team follow along more easily.</p>
 
 <h3 class="Heading"><a class="Anchor" aria-hidden="true" id="the_basics.say_ask_get.say" href="#the_basics.say_ask_get.say">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
@@ -243,7 +345,7 @@
 
 <p>For example:</p>
 
-<pre class="chroma">  <span class="k">def</span> <span class="nf">say_hello</span>
+<pre class="chroma">  <span class="k">def</span> <span class="nc"></span><span class="o"></span><span class="nf">say_hello</span>
     <span class="n">send_replies</span>
   <span class="k">end</span>
 </pre>
@@ -256,7 +358,7 @@
 
 <p>For example:</p>
 
-<pre class="chroma">  <span class="k">def</span> <span class="nf">ask_weather</span>
+<pre class="chroma">  <span class="k">def</span> <span class="nc"></span><span class="o"></span><span class="nf">ask_weather</span>
     <span class="n">send_replies</span>
     <span class="n">update_session_to</span> <span class="ss">state</span><span class="p">:</span> <span class="s1">&#39;get_weather_reponse&#39;</span>
   <span class="k">end</span>
@@ -266,11 +368,11 @@
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>GET</h3>
 
-<p><em>GET</em> Stealth actions are for <em>getting</em> and parsing the reponse from the user.</p>
+<p><em>GET</em> Stealth actions are for <em>getting</em> and parsing a response from the user.</p>
 
 <p>For example:</p>
 
-<pre class="chroma">  <span class="k">def</span> <span class="nf">get_weather_reponse</span>
+<pre class="chroma">  <span class="k">def</span> <span class="nc"></span><span class="o"></span><span class="nf">get_weather_reponse</span>
     <span class="k">if</span> <span class="n">current_message</span><span class="o">.</span><span class="n">message</span> <span class="o">==</span> <span class="s1">&#39;Sunny&#39;</span>
       <span class="n">step_to</span> <span class="ss">state</span><span class="p">:</span> <span class="s2">&#34;say_wear_sunglasses&#34;</span>
     <span class="k">elsif</span> <span class="n">current_message</span><span class="o">.</span><span class="n">message</span> <span class="o">==</span> <span class="s1">&#39;Raining&#39;</span>
@@ -285,42 +387,23 @@
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="sessions" href="#sessions">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Sessions</h1>
-                <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="sessions.state_machines" href="#sessions.state_machines">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>State Machines</h2>
+                <p>A user of your bot can be in any single flow and state at any given moment. They can never be in more than one flow or state. For this reason, Stealth sessions are modeled using <a href="https://en.m.wikipedia.org/wiki/Finite-state_machine">finite state machines</a>.</p>
 
-<p>TODO: Need to understand more about how Stealth handles the it’s session around State Machines.</p>
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="sessions.finite_state_machines" href="#sessions.finite_state_machines">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Finite State Machines</h2>
+
+<p>Technically, each flow is its own state machine with its own states. Stealth, however, does not restrict the movement between states as rigidly. So while we find the state machine model helpful to learn sessions, don’t spend too much time on Wikipedia!</p>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="sessions.redis_backed_sessions" href="#sessions.redis_backed_sessions">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Redis Backed Sessions</h2>
 
-<p>TODO Need to understand how redis fits in here.</p>
+<p>User sessions are stored in Redis. Each session is a lightweight key-value pair. The key is the user’s ID from the service – so for Facebook it may be a long integer value: <code>100023838288224423</code>. The value is the flow and state for the user separated by a “stabby” operator (<code>-&gt;</code>).</p>
 
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="sessions.current_user" href="#sessions.current_user">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a><code>current_user</code></h2>
+<p>So if for example a user with ID <code>100023838288224423</code> is currently at the <code>hello</code> flow and <code>ask_name</code> state, the value for the key would be: <code>hello-&gt;ask_name</code>.</p>
 
-<p>The user is available to you at anytime using <code>current_user</code>.</p>
-
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="sessions.current_session" href="#sessions.current_session">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a><code>current_session</code></h2>
-
-<p>The users’ session is available to you at anytime using <code>current_session</code>.</p>
-
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="sessions.current_message" href="#sessions.current_message">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a><code>current_message</code></h2>
-
-<p>The users’ current message is available to you at anytime using <code>current_message</code>. Note: <code>current_message</code> is full payload back from the specific messaging service.</p>
-
-<p>For example:</p>
-
-<pre class="chroma">if current_message.message = &#34;hello&#34;
-  step_to flow: &#39;hello&#39;, state: &#39;say_hello&#39;
-end
-</pre>
+<p>You likely won’t be interacting with sessions directly since Stealth manages it automatically for you. We just present it here for clarity into how sessions work.</p>
 
               </div>
 
@@ -328,23 +411,49 @@ end
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="controllers" href="#controllers">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Controllers</h1>
-                <p>Controllers are responsible for handling incoming requests and providing a appropriate response back to the user (replies). Every Stealth project comes with a default <code>bot_controller.rb</code></p>
+                <p>Controllers are responsible for handling incoming requests and getting a response back to the user (replies).</p>
+
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="controllers.naming_conventions" href="#controllers.naming_conventions">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Naming Conventions</h2>
+
+<p>The controller’s methods, also referred to as actions, must be named after the flow’s states. So for example, given the flow:</p>
+
+<pre class="chroma"><span class="n">flow</span> <span class="ss">:onboard</span> <span class="k">do</span>
+  <span class="n">state</span> <span class="ss">:say_welcome</span>
+  <span class="n">state</span> <span class="ss">:ask_for_phone</span>
+  <span class="n">state</span> <span class="ss">:get_phone</span><span class="p">,</span> <span class="ss">fails_to</span><span class="p">:</span> <span class="ss">:ask_for_phone</span>
+<span class="k">end</span>
+</pre>
+
+<p>The corresponding controller would be:</p>
+
+<pre class="chroma"><span class="k">class</span> <span class="nc">OnboardsController</span> <span class="o">&lt;</span> <span class="no">BotController</span>
+  <span class="k">def</span> <span class="nc"></span><span class="o"></span><span class="nf">say_welcome</span>
+
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nc"></span><span class="o"></span><span class="nf">ask_for_phone</span>
+
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nc"></span><span class="o"></span><span class="nf">get_phone</span>
+
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="controllers.bot_controller_rb" href="#controllers.bot_controller_rb">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a><code>bot_controller.rb</code></h2>
 
+<p>Every Stealth project comes with a default <code>bot_controller.rb</code>:</p>
+
 <pre class="chroma"><span class="k">class</span> <span class="nc">BotController</span> <span class="o">&lt;</span> <span class="no">Stealth</span><span class="o">::</span><span class="no">Controller</span>
 
   <span class="n">before_action</span> <span class="ss">:current_user</span>
 
-  <span class="k">def</span> <span class="nf">route</span>
-    <span class="k">if</span> <span class="n">current_message</span><span class="o">.</span><span class="n">payload</span><span class="o">.</span><span class="n">present?</span>
-      <span class="n">handle_payloads</span>
-      <span class="n">current_message</span><span class="o">.</span><span class="n">payload</span> <span class="o">=</span> <span class="kp">nil</span>
-      <span class="k">return</span>
-    <span class="k">end</span>
-
+  <span class="k">def</span> <span class="nc"></span><span class="o"></span><span class="nf">route</span>
     <span class="k">if</span> <span class="n">current_session</span><span class="o">.</span><span class="n">present?</span>
       <span class="n">step_to</span> <span class="ss">session</span><span class="p">:</span> <span class="n">current_session</span>
     <span class="k">else</span>
@@ -355,46 +464,153 @@ end
 <span class="k">end</span>
 </pre>
 
+<p>All of your controllers will inherit from <code>BotController</code>:</p>
+
+<pre class="chroma"><span class="k">class</span> <span class="nc">QuotesController</span> <span class="o">&lt;</span> <span class="no">BotController</span>
+
+<span class="k">end</span>
+</pre>
+
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="controllers.route_method" href="#controllers.route_method">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Route Method</h2>
+
+<p>You can implement any method in <code>BotController</code>. Typically you will implement methods like <code>current_user</code> and methods for handling message payloads. The one method that <code>BotController</code> <strong>must</strong> implement is the <code>route</code> method.</p>
+
+<p>The <code>route</code> method is called for every incoming message. In its default implementation, the <code>route</code> method checks whether the user already has a session, and if so routes them to that controller and action. If the user does not yet have a session, it will route them to the <code>hello</code> flow and <code>say_hello</code> action.</p>
+
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="controllers.stepping_and_updating_sessions" href="#controllers.stepping_and_updating_sessions">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Stepping and Updating Sessions</h2>
 
-<p>Stealth provides a few built in methods to help you navigate a user through you bot.</p>
+<p>Stealth provides a few built-in methods to help you route a user through your bot.</p>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="controllers.step_to" href="#controllers.step_to">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a><code>step_to</code></h2>
 
-<p>The <code>step_to</code> is used to move the user to another flow and/or state. <code>step_to</code> can accept either a <em>flow</em> or a <em>state</em>, or both. For example:</p>
+<p>The <code>step_to</code> method is used to update the session and immediately move the user to the specified flow and/or state. <code>step_to</code> can accept a <em>flow</em>, a <em>state</em>, or both. <code>step_to</code> is often used after a <code>say</code> action where the next action typically doesn’t require user input.</p>
 
-<p><code>step_to flow: &#39;hello&#39;</code> - This would redirect the user to the <code>hello</code> flow and start the <em>first</em> state in that flow as defined by the <code>flow_map.rb</code> file</p>
+<p>Some examples of the different parameters:</p>
 
-<p><code>step_to state: &#39;say_hello&#39;</code> - This would redirect the user to the <code>say_hello</code> state inside the current flow.</p>
+<p><code>step_to flow: &#39;hello&#39;</code> - Sets the session’s flow to <code>hello</code> and the state will be set to the <em>first</em> state in that flow (as defined by the <code>flow_map.rb</code> file). The corresponding controller action in the <code>HellosController</code> would also be called.</p>
 
-<p><code>step_to flow: &#39;hello&#39;, state: &#39;say_hello&#39;</code> - This would redirect the user to the <code>hello</code> flow and start the <code>say_hello</code> state.</p>
+<p><code>step_to state: &#39;say_hello&#39;</code> - Sets the session’s state to <code>say_hello</code> and keeps the flow the same. The <code>say_hello</code> controller action would also be called.</p>
+
+<p><code>step_to flow: &#39;hello&#39;, state: &#39;say_hello&#39;</code> - Sets the session’s flow to <code>hello</code> and the state to <code>say_hello</code>. The <code>say_hello</code> controller action of the <code>HellosController</code> controller would also be called.</p>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="controllers.update_session_to" href="#controllers.update_session_to">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a><code>update_session_to</code></h2>
 
-<p>Similar to <code>step_to</code>, <code>update_session_to</code> is used to update the user’s session to a current flow and/or state. It accepts the same parameters.</p>
+<p>Similar to <code>step_to</code>, <code>update_session_to</code> is used to update the user’s session to a flow and/or state. It accepts the same parameters. However, <code>update_session_to</code> does not immediately call the respective controller action. <code>update_session_to</code> is typically used after an <code>ask</code> action where the next action is waiting for user input. So by asking a user for input, then updating the session, it ensures the response the user sends back can be handled by the <code>get</code> action.</p>
 
-<p><code>update_session_to flow: &#39;quote&#39;</code> - This would update the users session to the <code>quote</code> flow and use the <em>first</em> state in that flow as defined by the <code>flow_map.rb</code> file</p>
+<p>Some examples of the different parameters:</p>
 
-<p><code>update_session_to state: &#39;ask_zip_code&#39;</code> - This would update the users session to the <code>ask_zip_code</code> state inside the current flow.</p>
+<p><code>update_session_to flow: &#39;quote&#39;</code> - Sets the session’s flow to <code>quote</code> and the state will be set to the <em>first</em> state in that flow (as defined by the <code>flow_map.rb</code> file).</p>
 
-<p><code>step_to flow: &#39;quote&#39;, state: &#39;ask_zip_code&#39;</code> - This would update the users session to <code>quote</code> flow and the <code>ask_zip_code</code> state.</p>
+<p><code>update_session_to state: &#39;ask_zip_code&#39;</code> - Sets the session’s state to <code>ask_zip_code</code> and keeps the flow the same.</p>
+
+<p><code>step_to flow: &#39;quote&#39;, state: &#39;ask_zip_code&#39;</code> - Sets the session’s flow to <code>quote</code> and the state to <code>ask_zip_code</code>.</p>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="controllers.send_replies" href="#controllers.send_replies">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a><code>send_replies</code></h2>
 
-<p><code>send_replies</code> is used to trigger the associated reply files. For example:</p>
+<p><code>send_replies</code> will instruct the <code>Reply</code> to construct the reply and transmit them. Not all of your controller actions will send replies. Typically in <code>get</code> action, you’ll get a user’s response, perform some action, and then send a user to a new state without replying.</p>
 
-<pre class="chroma"><span class="k">def</span> <span class="nf">say_contact_us</span>
-  <span class="n">send_replies</span>
+<p>The <code>send_replies</code> method does not take any parameters:</p>
+
+<pre class="chroma"><span class="k">class</span> <span class="nc">ContactsController</span> <span class="o">&lt;</span> <span class="no">BotController</span>
+  <span class="k">def</span> <span class="nc"></span><span class="o"></span><span class="nf">say_contact_us</span>
+    <span class="n">send_replies</span>
+  <span class="k">end</span>
 <span class="k">end</span>
 </pre>
+
+<p>This would render the reply contained in <code>replies/contacts/say_contact_us.yml</code>.</p>
+
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="controllers.step_to_in" href="#controllers.step_to_in">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a><code>step_to_in</code></h2>
+
+<p>The <code>step_to_in</code> method is similar to <code>step_to</code>. The only difference is that instead of calling the respective controller action immediately, it calls it after a specified duration. It can also take a flow, state, or both.</p>
+
+<p>For example:</p>
+
+<pre class="chroma"><span class="n">step_to_in</span> <span class="mi">8</span><span class="o">.</span><span class="n">hours</span><span class="p">,</span> <span class="ss">flow</span><span class="p">:</span> <span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="ss">state</span><span class="p">:</span> <span class="s1">&#39;say_hello&#39;</span>
+</pre>
+
+<p>This will set the user’s session to the <code>hello</code> flow and <code>say_hello</code> state in 8 hours after being called. It will then immediately call that responsible controller action.</p>
+
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="controllers.step_to_at" href="#controllers.step_to_at">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a><code>step_to_at</code></h2>
+
+<p>The <code>step_to_at</code> method is similar to <code>step_to</code>. The only difference is that instead of calling the respective controller action immediately, it calls it at a specific date and time. It can also take a flow, state, or both.</p>
+
+<p>For example:</p>
+
+<pre class="chroma"><span class="n">step_to_at</span> <span class="no">DateTime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s2">&#34;01/23/23 20:23&#34;</span><span class="p">,</span> <span class="s2">&#34;%m/%d/%y %H:%M&#34;</span><span class="p">),</span> <span class="ss">flow</span><span class="p">:</span> <span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="ss">state</span><span class="p">:</span> <span class="s1">&#39;say_hello&#39;</span>
+</pre>
+
+<p>This will set the user’s session to the <code>hello</code> flow and <code>say_hello</code> state on <code>Jan 23, 2023 @ 20:23</code>. It will then immediately call that responsible controller action.</p>
+
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="controllers.available_data" href="#controllers.available_data">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Available Data</h2>
+
+<p>Within each controller action, you have access to a few objects containing information about the session and the message the being processed.</p>
+
+<h3 class="Heading"><a class="Anchor" aria-hidden="true" id="controllers.available_data.current_session" href="#controllers.available_data.current_session">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>current_session</h3>
+
+<p>The user’s session is available to you at anytime using <code>current_session</code>. This is a <code>Stealth::Session</code> object. It has a few notable methods:</p>
+
+<p><code>flow_string</code>: Returns the name of the flow.
+<code>state_string</code>: Returns the name of the state.
+<code>current_session + 2.states</code>: Returns a new session object 2 states after the current state. If we’ve passed the last state, the last state is returned.
+<code>current_session - 2.states</code>: Returns a new session object 2 states before the current state. If we’ve passed the first state, the first state is returned.</p>
+
+<h3 class="Heading"><a class="Anchor" aria-hidden="true" id="controllers.available_data.current_message" href="#controllers.available_data.current_message">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>current_message</h3>
+
+<p>The current message being processed is available to you at anytime using <code>current_message</code>. This is a <code>Stealth::ServiceMessage</code> object. It has a few notable methods:</p>
+
+<p><code>sender_id</code>: The ID of the user sending the message. This will vary based on the service integration.
+<code>timestamp</code>: Ruby <code>DateTime</code> object of when the message was transmitted.
+<code>service</code>: String indicating the service from where the message originated (i.e., ‘facebook’).
+<code>messsage</code>: String of the message contents.
+<code>payload</code>: This will vary by service integration.
+<code>location</code>: This will vary by service integration.
+<code>attachments</code>: This will vary by service integration.
+<code>referral</code>: This will vary by service integration.</p>
+
+<h3 class="Heading"><a class="Anchor" aria-hidden="true" id="controllers.available_data.current_service" href="#controllers.available_data.current_service">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>current_service</h3>
+
+<p>This will be a string indicating the service from where the message originated (i.e., ‘facebook’ or ‘twilio’)</p>
+
+<h3 class="Heading"><a class="Anchor" aria-hidden="true" id="controllers.available_data.has_location" href="#controllers.available_data.has_location">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>has_location?</h3>
+
+<p>Returns <code>true</code> or <code>false</code> depending on whether or not the <code>current_message</code> contains location data.</p>
+
+<h3 class="Heading"><a class="Anchor" aria-hidden="true" id="controllers.available_data.has_attachments" href="#controllers.available_data.has_attachments">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>has_attachments?</h3>
+
+<p>Returns <code>true</code> or <code>false</code> depending on whether or not the <code>current_message</code> contains attachments.</p>
+
+<h3 class="Heading"><a class="Anchor" aria-hidden="true" id="controllers.available_data.current_user_id" href="#controllers.available_data.current_user_id">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>current_user_id</h3>
+
+<p>A convenience method for accessing the user’s ID.</p>
 
               </div>
 
@@ -402,37 +618,44 @@ end
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="models" href="#models">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Models</h1>
-                <p>The power of three. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>Models in Stealth are powered by <a href="http://guides.rubyonrails.org/active_record_basics.html">ActiveRecord</a>. Your bot may not need to persist data, but if it does, ActiveRecord comes built in. We’ve tried to keep things identical to Ruby on Rails.</p>
 
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="models.active_record" href="#models.active_record">
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="models.active_record_models" href="#models.active_record_models">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>ActiveRecord</h2>
+</a>ActiveRecord Models</h2>
 
-<p>The power of three. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<p>An ActiveRecord model in Stealth inherits all of the functionality from <a href="http://guides.rubyonrails.org/active_record_basics.html">ActiveRecord</a>. An empty model looks like this in Stealth:</p>
+
+<pre class="chroma"><span class="k">class</span> <span class="nc">Quote</span> <span class="o">&lt;</span> <span class="no">BotRecord</span>
+
+<span class="k">end</span>
+</pre>
+
+<p>With the exception of inheriting from <code>BotRecord</code> instead of <code>ApplicationRecord</code>, everything else matches what is in the <a href="http://guides.rubyonrails.org/active_record_basics.html">ActiveRecord</a> documentation.</p>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="models.configuration" href="#models.configuration">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Configuration</h2>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<p>Configuring a database is done via <code>config/database.yml</code>. A sample <code>database.yml</code> file is included when you generate your bot. It is configured to use SQLite3. For more options please refer to the <a href="http://guides.rubyonrails.org/configuring.html#configuring-a-database">Ruby on Rails documentation</a>.</p>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="models.migrations" href="#models.migrations">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Migrations</h2>
 
-<p>The power of three. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<p>In order to use your models, you’ll need to generate migrations to create your database schema:</p>
 
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="models.generating" href="#models.generating">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Generating</h2>
+<pre class="chroma">stealth g migration create_users
+</pre>
 
-<p>The power of three. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<p>This will create a migration named <code>CreateUsers</code>. To migrate your database:</p>
 
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="models.running" href="#models.running">
-	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Running</h2>
+<pre class="chroma">stealth db:migrate
+</pre>
 
-<p>The power of three. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<p>For more information about migrations, seed data, creating databases, or dropping databases please refer to the <a href="http://guides.rubyonrails.org/active_record_migrations.html">Ruby on Rails documentation</a>.</p>
+
+<p>Just remember to prefix your commands with <code>stealth</code> rather than <code>rails</code>.</p>
 
               </div>
 
@@ -440,7 +663,7 @@ end
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="replies" href="#replies">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Replies</h1>
-                <p>Stealth replies are used to send one or many <em>reply types</em> back to the user. Reply types are dependent on the specific messaging service you’re using. Each messaging integration will detail it’s supported reply types in it’s respective docs.</p>
+                <p>Stealth replies can send one or more replies to a user. Reply types are dependent on the specific messaging service you’re using. Each service integration will detail it’s supported reply types in it’s respective docs.</p>
 
 <p>However, here is a generic reply using text, delays, and suggestions.</p>
 
@@ -459,29 +682,96 @@ end
 </span><span class="w">    </span>-<span class="w"> </span>text<span class="p">:</span><span class="w"> </span><span class="s2">&#34;No&#34;</span><span class="w">
 </span><span class="w"></span></pre>
 
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="replies.format" href="#replies.format">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Format</h2>
+
+<p>Stealth reply templates are written in YAML. Stealth doesn’t use advanced YAML features, but we do recommend you familiarize yourself with the syntax. In the above reply example, you should be able to see there are 5 replies included in the reply file.</p>
+
+<p><strong>Caveat:</strong> YAML interprets “yes”, “no”, “true”, “false”, “y”, “n”, etc (without quotes) as boolean values. So make sure you wrap them in quotes as we did above.</p>
+
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="replies.erb" href="#replies.erb">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>ERB</h2>
+
+<p>Reply templates currently support ERB:</p>
+
+<pre class="chroma">- reply_type: text
+  text: &#34;Hello, &lt;%= current_user.first_name %&gt;. Welcome to our Bot.&#34;
+- reply_type: delay
+  duration: 2
+- reply_type: text
+  text: &#34;We&#39;re here to help you learn more about something or another.&#34;
+- reply_type: delay
+  duration: 2
+&lt;% if current_user.valid? %&gt;
+  - reply_type: text
+    text: &#39;By using the &#34;Yes&#34; and &#34;No&#34; buttons below, are you interested in do you want to continue?&#39;
+    suggestions:
+      - text: &#34;Yes&#34;
+      - text: &#34;No&#34;
+&lt;% end %&gt;
+</pre>
+
+<p>With ERB in your reply templates, you can access controller instance variables and helper methods in your replies.</p>
+
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="replies.delays" href="#replies.delays">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Delays</h2>
+
+<p>Delays are a common pattern of chatbot design. After a block of text, it’s recommended to pause for a bit to give the user a chance to read the message. The duration of the delay depends on the length of the message sent.</p>
+
+<p>Stealth will pause for the duration specified. For service integrations that support it (like Facebook), Stealth will send a typing indicator while it is paused.</p>
+
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="replies.naming_conventions" href="#replies.naming_conventions">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Naming Conventions</h2>
+
+<p>Replies are named after a flow’s state (which is also the controller’s action). So for a given controller:</p>
+
+<pre class="chroma"><span class="k">class</span> <span class="nc">QuotesController</span> <span class="o">&lt;</span> <span class="no">BotController</span>
+  <span class="k">def</span> <span class="nc"></span><span class="o"></span><span class="nf">say_price</span>
+
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre>
+
+<p>You would need to place your reply template in <code>replies/quotes/say_price.yml</code>. If your template contains ERB, you must add the <code>.erb</code> suffix to the template filename: <code>replies/quotes/say_price.yml.erb</code>.</p>
+
               </div>
 
               <div class="Page" id="catch_all">
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="catch_all" href="#catch_all">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Catch All</h1>
-                <p>Stealth Catch Alls are designed to handle the most common scenario inside of a bot. What happens when the user says something the bot doesn’t understand. The majority of bots will simply respond back with a generic “I don’t understand” and expect the user to figure it out. While this experience might be ok for some bots, we created a more advanced way of handling these experiences. The better your Catch Alls, the better your bot.</p>
+</a>CatchAll</h1>
+                <p>Stealth CatchAlls are designed to handle a very common scenario within chatbots. What happens when the user says something the bot doesn’t understand? The majority of bots will simply respond back with a generic “I don’t understand” and hope the user to figures out the next step. While this experience might be ok for some bots, we built a more robust way of handling these experiences right into Stealth. The better your CatchAlls, the better your bot.</p>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="catch_all.triggering" href="#catch_all.triggering">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Triggering</h2>
 
-<p>Catch all flows are automatically triggered when a controller action does not successfully <code>update_session_to</code> or <code>step_to</code>. This could be when a user says something that’s not handled or even a API call 500’s.</p>
+<p>A CatchAll flow is automatically triggered when a controller action fails to do <strong>at least one</strong> of the following:</p>
+
+<ol>
+<li>Update a session (via <code>step_to</code>, <code>update_session_to</code>, or any other of the step methods)</li>
+<li>Send a reply via <code>send_replies</code></li>
+</ol>
+
+<p>In addition to the above two conditions, if your controller action raises an Exception, the CatchAll flow will automatically be triggered.</p>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="catch_all.multi_level" href="#catch_all.multi_level">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a>Multi Level</h2>
+</a>Multi-Level</h2>
 
-<p>Stealth also keeps track of how many times the catch all is triggered. This allows you to build experiences in which the user is provided different responses for the 2nd or 3rd time.</p>
+<p>Stealth keeps track of how many times a CatchAll is triggered for a given session. This allows you to build experiences in which the user is provided different responses for subsequent failures. Once a session progresses past a failing state, the CatchAll counter resets.</p>
 
-<p>By default a Stealth bot comes with the first level catch all. For example here is the controller action and associated reply:</p>
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="catch_all.retrying" href="#catch_all.retrying">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Retrying</h2>
 
-<pre class="chroma"><span class="k">def</span> <span class="nf">level1</span>
+<p>By default, a Stealth bot comes with the first level CatchAll already defined. Here is the <code>CatchAllsController</code> action and associated reply:</p>
+
+<pre class="chroma"><span class="k">def</span> <span class="nc"></span><span class="o"></span><span class="nf">level1</span>
   <span class="n">send_replies</span>
 
   <span class="k">if</span> <span class="n">previous_session_specifies_fails_to?</span>
@@ -493,10 +783,20 @@ end
 </pre>
 
 <pre class="chroma">-<span class="w"> </span>reply_type<span class="p">:</span><span class="w"> </span>text<span class="w">
-</span><span class="w">  </span>text<span class="p">:</span><span class="w"> </span>Opps.<span class="w"> </span>It<span class="w"> </span>looks<span class="w"> </span>like<span class="w"> </span>something<span class="w"> </span>went<span class="w"> </span>wrong.<span class="w"> </span>Let&#39;s<span class="w"> </span>try<span class="w"> </span>that<span class="w"> </span>again<span class="w">
+</span><span class="w">  </span>text<span class="p">:</span><span class="w"> </span>Oops.<span class="w"> </span>It<span class="w"> </span>looks<span class="w"> </span>like<span class="w"> </span>something<span class="w"> </span>went<span class="w"> </span>wrong.<span class="w"> </span>Let&#39;s<span class="w"> </span>try<span class="w"> </span>that<span class="w"> </span>again<span class="w">
 </span><span class="w"></span></pre>
 
-<p>If you would like to expand the experience simply add a <code>level2</code> controller action and associated reply. You can go as far as you want. Catch Alls have no limit just make sure you increment using the standardized method names of <code>level1</code>, <code>level2</code>, <code>level3</code>, <code>level4</code>, etc.</p>
+<p>In the controller action, we check if the <code>previous_session</code> (the one that failed) specified a <code>fails_to</code> state. If so, we send the user there. Otherwise, we send the user back 2 states.</p>
+
+<p>Sending a user back two states is a pretty good generic action. Going back 1 state takes us back to the action that failed. Since the actions most likely to fail are <code>get</code> actions, or actions that deal with user responses, going back 2 states usually takes us back to the original “question”.</p>
+
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="catch_all.adding_more_levels" href="#catch_all.adding_more_levels">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Adding More Levels</h2>
+
+<p>If you would like to expand the experience, simply add a <code>level2</code> controller action and associated reply (and update the <code>FlowMap</code>). You can go as far as you want. CatchAlls have no limit, just make sure you increment using the standardized method names of <code>level1</code>, <code>level2</code>, <code>level3</code>, <code>level4</code>, etc.</p>
+
+<p>If a user has encountered the maximum number of CatchAll levels as you have defined, the user’s session will remain at the last CatchAll state.</p>
 
               </div>
 
@@ -504,7 +804,7 @@ end
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="messaging_integrations" href="#messaging_integrations">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Messaging Integrations</h1>
-                <p>Stealth is designed for your bot to support one or many Messaging Services. For example, this could be SMS or both SMS and Facebook messenger. Messaging Integrations can be attached to your Stealth bot by adding the messaging integration gem to your <code>Gemfile</code>.</p>
+                <p>Stealth is designed for your bot to support one or more messaging integrations. For example, this could be just SMS or both SMS and Facebook Messenger. Messaging integrations can be attached to your Stealth bot by adding the messaging integration gem to your <code>Gemfile</code>.</p>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="messaging_integrations.gemfile" href="#messaging_integrations.gemfile">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
@@ -566,28 +866,26 @@ gem &#39;stealth&#39;, &#39;~&gt; 0.10.0&#39;
 </span><span class="w">
 </span><span class="w"></span></pre>
 
-<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="messaging_integrations.sealth_setup" href="#messaging_integrations.sealth_setup">
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="messaging_integrations.stealth_setup" href="#messaging_integrations.stealth_setup">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-</a><code>sealth setup</code></h2>
+</a><code>stealth setup</code></h2>
 
-<p>Most Messaging integrations require a initial setup. For example, Facebook requires you to send a payload to define the default greeting and persistent menu. You can accomplish this by running the <code>stealth setup</code> followed by the integration. For example:</p>
+<p>Most messaging integrations require an initial setup. For example, Facebook requires you to send a payload to define the default greeting and persistent menu. You can accomplish this by running the <code>stealth setup</code> followed by the integration. For example:</p>
 
 <p><code>stealth setup facebook</code></p>
 
-<p>Make sure to reference the specific messaging integration for more specifics.</p>
+<p>Make sure to reference the respective messaging integration documentation for more specifics.</p>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="messaging_integrations.officially_supported" href="#messaging_integrations.officially_supported">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Officially Supported</h2>
 
-<p>Right now, Stealth officially supports Facebook Messenger and SMS through Twilio. While we plan to add more integrations in the future please feel free to add your own and let us know so we can keep this list updated. 😎</p>
-
-<p>Please check out the integration docs here:</p>
-
 <ul>
 <li><a href="https://github.com/hellostealth/stealth-facebook">Facebook Messenger</a></li>
 <li><a href="https://github.com/hellostealth/stealth-twilio">SMS (Twillio)</a></li>
 </ul>
+
+<p>While we plan to add more integrations in the future, please feel free to add your own and let us know so we can keep this list updated. 😎</p>
 
               </div>
 
@@ -595,23 +893,19 @@ gem &#39;stealth&#39;, &#39;~&gt; 0.10.0&#39;
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="nlp_integrations" href="#nlp_integrations">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>NLP Integrations</h1>
-                <p>Like Messaging Inetegrations, Stealth also has official support for NLP and Machine Learning using Amazon Comprehend using our gem <code>stealth-aws-comprehend</code></p>
+                <p>Stealth can be extended with NLP/NLU integrations. While these are not needed for the majority of interactions within chatbot, you may find they are helpful for certain types of interactions.</p>
 
-<p>This gem adds the following methods to <code>current_message</code>:</p>
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="nlp_integrations.officially_supported" href="#nlp_integrations.officially_supported">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Officially Supported</h2>
 
-<ol>
-<li><p><code>language</code> identifies text written in over 100 languages and returns the dominant language in <code>current_message</code> with a confidence score</p></li>
+<p>Stealth currently supports:</p>
 
-<li><p><code>entities</code> returns the named entities (“People,” “Places,” “Locations,” etc.) present in <code>current_message</code></p></li>
+<ul>
+<li><a href="https://github.com/hellostealth/stealth-aws-comprehend">AWS Comprehend</a></li>
+</ul>
 
-<li><p><code>key_phrases</code> returns the key phrases or talking points and a confidence score to support for the <code>current_message</code></p></li>
-
-<li><p><code>sentiment</code> returns the overall sentiment (Positive, Negative, Neutral, or Mixed) for the <code>current_message</code></p></li>
-
-<li><p><code>sentiment_score</code> returns the scoring for each sentiment (Positive, Negative, Neutral, or Mixed) for the <code>current_message</code></p></li>
-</ol>
-
-<p>Checkout the official <a href="https://github.com/hellostealth/stealth-aws-comprehend">stealth-aws-comprehend</a> docs for more information.</p>
+<p>While we plan to add more integrations in the future, please feel free to add your own and let us know so we can keep this list updated. 😎</p>
 
               </div>
 
@@ -619,11 +913,19 @@ gem &#39;stealth&#39;, &#39;~&gt; 0.10.0&#39;
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="analytics_integrations" href="#analytics_integrations">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Analytics Integrations</h1>
-                <p>We’ve created an official gem for <a href="https://mixpanel.com">Mixpanel</a> support.</p>
+                <p>Stealth can be extended with metric/analytic integrations.</p>
 
-<p>This gem automatically tracks State Changes. They are sent to Mixpanel each time a state transition takes place. The user’s <code>recipient_id</code> is sent to Mixpanel as the <code>distinct_id</code>. Additional properties for flow and state are also sent with the event. This allows you to build custom funnels and custom events as you wish.</p>
+<h2 class="Heading"><a class="Anchor" aria-hidden="true" id="analytics_integrations.officially_supported" href="#analytics_integrations.officially_supported">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</a>Officially Supported</h2>
 
-<p>Checkout the official <a href="https://github.com/hellostealth/stealth-mixpanel">stealth-mixpanel</a> docs for more information.</p>
+<p>Stealth currently supports:</p>
+
+<ul>
+<li><a href="https://github.com/hellostealth/stealth-mixpanel">Mixpanel</a></li>
+</ul>
+
+<p>While we plan to add more integrations in the future, please feel free to add your own and let us know so we can keep this list updated. 😎</p>
 
               </div>
 
@@ -631,7 +933,7 @@ gem &#39;stealth&#39;, &#39;~&gt; 0.10.0&#39;
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="commands" href="#commands">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Commands</h1>
-                <p>Stealth provides the <code>stealth</code> command-line program, used to generate bots, generate flows, start a console, run driver setup tasks and run the server.</p>
+                <p>Stealth provides the <code>stealth</code> command-line program. It is used to generate new bots, generate flows, start a console, run integration setup tasks, run the server, and more.</p>
 
 <p>To view details for a command at any time use <code>stealth help</code>.</p>
 
@@ -648,14 +950,28 @@ Flags:
       --version        Show application version.
 
 Commands:
-  stealth clear_sessions  # Clears all sessions in development
-  stealth console         # Starts a stealth console
-  stealth generate        # Generates scaffold Stealth files
-  stealth help [COMMAND]  # Describe available commands or one specific command
-  stealth new [NAME]      # Creates a new Stealth bot
-  stealth server          # Starts a stealth server
-  stealth setup           # Runs setup tasks for a specified service
-  stealth version         # Prints stealth version
+stealth console             # Starts a stealth console
+stealth db:create           # Creates the database from DATABASE_URL or config/database.yml for the current STEALTH_ENV
+stealth db:create:all       # Creates all databases from DATABASE_URL or config/database.yml
+stealth db:drop             # Drops the database from DATABASE_URL or config/database.yml for the current STEALTH_ENV
+stealth db:drop:all         # Drops all databases from DATABASE_URL or config/database.yml
+stealth db:environment:set  # Set the environment value for the database
+stealth db:migrate          # Migrate the database
+stealth db:rollback         # Rolls the schema back to the previous version
+stealth db:schema:dump      # Creates a db/schema.rb file that is portable against any DB supported by Active Record
+stealth db:schema:load      # Loads a schema.rb file into the database
+stealth db:seed             # Seeds the database with data from db/seeds.rb
+stealth db:setup            # Creates the database, loads the schema, and initializes with the seed data (use db:reset to also drop the database first)
+stealth db:structure:dump   # Dumps the database structure to db/structure.sql. Specify another file with SCHEMA=db/my_structure.sql
+stealth db:structure:load   # Recreates the databases from the structure.sql file
+stealth db:version          # Retrieves the current schema version number
+stealth generate            # Generates scaffold Stealth files
+stealth help [COMMAND]      # Describe available commands or one specific command
+stealth new                 # Creates a new Stealth bot
+stealth server              # Starts a stealth server
+stealth sessions:clear      # Clears all sessions in development
+stealth setup               # Runs setup tasks for a specified service
+stealth version             # Prints stealth version
 
 Examples:
 
@@ -669,7 +985,10 @@ Examples:
   $ stealth setup [INTEGRATION NAME]
 
   Start a Stealth console.
-  $ stealth console
+  $ stealth c
+
+  Start the Stealth server.
+  $ stealth s
 </pre>
 
               </div>
@@ -678,13 +997,13 @@ Examples:
                 <h1 class="Heading"><a class="Anchor" aria-hidden="true" id="deployment" href="#deployment">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Deployment</h1>
-                <p>Stealth is a rack based web app. Which means it can be hosted on virtually anything. Virtual or Physical servers. However, we recommend Heroku because of it’s simplicity of deployment.</p>
+                <p>Stealth is a rack based application. That means it can be hosted on most platforms as well as taking advantage of existing tools such as Docker.</p>
 
 <h2 class="Heading"><a class="Anchor" aria-hidden="true" id="deployment.deploying_on_heroku" href="#deployment.deploying_on_heroku">
 	<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 </a>Deploying on Heroku</h2>
 
-<p>Since Stealth is a Ruby based Rack app, it supports deploying to <a href="http://herokuapp.com">Heroku</a> out of the box. Here is quick guide to get you started.</p>
+<p>Stealth supports <a href="http://herokuapp.com">Heroku</a> out of the box. In fact, running a <code>stealth s</code> command locally boots <code>foreman</code> using a <code>Procfile.dev</code> file similar to what Heroku does. Here is a quick guide to get you started.</p>
 
 <p>If you haven’t, make sure to track your bot in Git</p>
 
@@ -705,12 +1024,25 @@ Examples:
 <pre class="chroma">$ heroku apps:create &lt;BOT NAME&gt;
 </pre>
 
+<p>You will want a production <code>Procfile</code> separate from your development <code>Procfile.dev</code>. We recommend adding:</p>
+
+<pre class="chroma">web: bundle exec puma -C config/puma.rb
+sidekiq: bundle exec sidekiq -C config/sidekiq.yml -q webhooks -q default -r ./config/boot.rb
+release: bundle exec rake db:migrate
+</pre>
+
 <p>Then deploy your bot to Heroku.</p>
 
 <pre class="chroma">$ git push heroku master
 </pre>
 
-<p>Once deployed, make sure to enable both the <code>Heroku Postgres</code> and <code>Heroku Redis</code> addons. Additionally, make sure you run any <code>stealth setup</code> commands to configure your messaging service webhooks for your new production environments.</p>
+<p>Once deployed:</p>
+
+<ol>
+<li>Make sure to enable both the <code>Heroku Postgres</code> (if you use a database) and <code>Heroku Redis</code> addons</li>
+<li>Make sure the <code>web</code> and <code>sidekiq</code> dynos are spun up</li>
+<li>Make sure you run any <code>stealth setup</code> commands to configure your messaging service</li>
+</ol>
 
               </div>
 
