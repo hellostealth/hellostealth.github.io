@@ -25,6 +25,11 @@ h1, h2, h3 {
     }
 }
 
+#main-heading {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
 p.lead {
   opacity: .40;
   font-size: 18px;
