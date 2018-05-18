@@ -97,8 +97,8 @@ p a:hover {
   border-bottom-color: var(--color);
 }
 
-ul {
-  margin: 50px 0 50px 30px;
+ul, ol {
+  margin: 20px 0 20px 30px;
   padding: 0;
 }
 
@@ -106,7 +106,7 @@ ul ul {
   margin: 10px 0 10px 30px;
 }
 
-ul li {
+ul li, ol li {
   margin: 5px 0;
   color: var(--fg-color-light);
   line-height: 1.5em;
@@ -132,7 +132,8 @@ li > code,
 p > code {
   border: 1px solid #DEE2E6;
   font-size: 0.75rem;
-  padding: 3px 10px;
+  padding: 1px 5px;
+  background: #fff;
   border-radius: 3px;
   white-space: nowrap;
   font-weight: 600;
