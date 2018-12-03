@@ -266,10 +266,22 @@ details > p {
 }
 
 .Title .subtext {
+  margin-top: 1rem;
+  display: block;
   color: var(--fg-color-light);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   text-transform: uppercase;
-  display: none;
+}
+
+.Title .subtext a, .Title .subtext a:visited {
+  border-bottom: 1px solid var(--fg-dark);
+}
+
+.Title .subtext aside {
+  float: right;
+  margin-left: 20px;
+  display: inline;
+  font-size: 0.7rem;
 }
 
 .Title .text {
